@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Long Have I Lived? — Days, Hours, Minutes Live</title>
+<meta name="description" content="Enter your birthday and see exactly how long you have lived — days, hours, minutes and seconds, ticking live — plus how much time you have left until age 80. Free, no sign-up.">
+<meta name="keywords" content="how long have i lived, time lived calculator, age in days, age in seconds, time left calculator, how many days have i lived, life calculator">
+<meta property="og:type" content="website">
+<meta property="og:title" content="How Long Have I Lived? — Days, Hours, Minutes Live">
+<meta property="og:description" content="Enter your birthday and watch your life tick by in days, hours, minutes and seconds — live. See how long you have lived and how much time is left. Free, no sign-up.">
+<meta property="og:url" content="https://tool.maliksubhan.top/time-calculator/">
+<meta property="og:image" content="https://tool.maliksubhan.top/og-time.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Long Have I Lived? — Time Lived &amp; Time Left Calculator">
+<meta name="twitter:description" content="Enter your birthday and watch your life tick by in days, hours, minutes and seconds — live. Free, no sign-up.">
+<meta name="twitter:image" content="https://tool.maliksubhan.top/og-time.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"How Long Have I Lived? — Time Lived & Time Left Calculator","url":"https://tool.maliksubhan.top/time-calculator/","description":"Enter your birthday and see exactly how long you have lived — days, hours, minutes and seconds, ticking live — plus how much time you have left until your expected age. Free, no sign-up.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, Helvetica, sans-serif; background: #f4f6f8; color: #1a1a1a; line-height: 1.6; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 24px 16px 48px; }
+  .crumbs { font-size: 13px; color: #888; margin-bottom: 8px; }
+  .crumbs a { color: #888; }
+  header { text-align: center; padding: 28px 0 4px; }
+  header h1 { font-size: 30px; line-height: 1.25; }
+  header h1 span { color: #c00; }
+  header p { color: #555; margin-top: 8px; font-size: 16px; max-width: 640px; margin-left: auto; margin-right: auto; }
+  .card { background: #fff; border: 1px solid #e2e2e2; border-radius: 12px; padding: 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-top: 24px; }
+  .card h2 { font-size: 20px; margin-bottom: 6px; }
+  .card h2 span { color: #c00; }
+  .card p { color: #555; font-size: 14px; }
+  .inputs { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; align-items: flex-end; }
+  .field { flex: 1 1 160px; }
+  .field label { display: block; font-size: 13px; font-weight: bold; color: #444; margin-bottom: 4px; }
+  .field input { width: 100%; padding: 11px 12px; font-size: 16px; border: 2px solid #ccc; border-radius: 8px; font-family: Arial, Helvetica, sans-serif; }
+  .field input:focus { border-color: #c00; outline: none; }
+  .btn { background: #c00; color: #fff; border: none; border-radius: 8px; padding: 12px 22px; font-size: 15px; font-weight: bold; cursor: pointer; }
+  .btn:hover { background: #a00; }
+  .btn-light { background: #eee; color: #1a1a1a; }
+  .error { display: none; background: #fdecea; color: #b3261e; border: 1px solid #f5c6c2; border-radius: 8px; padding: 10px 12px; margin-top: 12px; font-size: 14px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-top: 18px; }
+  .stat { background: #f4f6f8; border-radius: 10px; padding: 16px 10px; text-align: center; }
+  .stat .num { font-size: 30px; font-weight: bold; color: #1a1a1a; line-height: 1.1; word-break: break-all; }
+  .stat .num.red { color: #c00; }
+  .stat .lbl { font-size: 13px; color: #666; margin-top: 4px; }
+  .big-line { text-align: center; margin-top: 16px; font-size: 17px; }
+  .big-line b { color: #c00; }
+  .bar-wrap { margin-top: 18px; }
+  .bar-label { display: flex; justify-content: space-between; font-size: 13px; color: #666; }
+  .bar { height: 18px; background: #eee; border-radius: 20px; overflow: hidden; margin-top: 6px; }
+  .bar-fill { height: 100%; background: #c00; width: 0%; transition: width 1s linear; }
+  .fun { margin-top: 16px; font-size: 14px; color: #555; text-align: center; }
+  .note { margin-top: 12px; font-size: 13px; color: #777; }
+  section.info h2 { font-size: 20px; margin-bottom: 8px; }
+  section.info ol { margin-left: 20px; color: #444; }
+  .faq h3 { font-size: 16px; margin-top: 14px; }
+  .faq p { color: #444; }
+  footer { text-align: center; color: #888; font-size: 13px; margin-top: 40px; }
+  footer a { color: #888; }
+  .tags { text-align: center; color: #888; font-size: 13px; margin-top: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="crumbs"><a href="/">← All free tools</a></p>
+  <header>
+    <h1>⏳ How Long Have <span>I Lived?</span></h1>
+    <p>Enter your birthday and watch your life tick by — days, hours, minutes and seconds, live. And see how much time you have left.</p>
+  </header>
+
+  <div class="card">
+    <h2>Your birthday</h2>
+    <p>Your birthday never leaves your browser — nothing is uploaded or saved anywhere.</p>
+    <div class="inputs">
+      <div class="field">
+        <label for="dob">Date of birth</label>
+        <input type="date" id="dob" value="2000-01-01" max="2026-11-25">
+      </div>
+      <div class="field">
+        <label for="tob">Time of birth (optional)</label>
+        <input type="time" id="tob" value="00:00">
+      </div>
+      <div class="field">
+        <label for="exp">I expect to live until age</label>
+        <input type="number" id="exp" value="80" min="40" max="120">
+      </div>
+      <button class="btn" id="calcBtn">Calculate</button>
+    </div>
+    <div class="error" id="error"></div>
+  </div>
+
+  <div class="card">
+    <h2>🕐 You have <span>lived</span></h2>
+    <div class="grid">
+      <div class="stat"><div class="num" id="livedYears">–</div><div class="lbl">years old</div></div>
+      <div class="stat"><div class="num" id="livedDays">–</div><div class="lbl">days</div></div>
+      <div class="stat"><div class="num" id="livedHours">–</div><div class="lbl">hours</div></div>
+      <div class="stat"><div class="num" id="livedMins">–</div><div class="lbl">minutes</div></div>
+      <div class="stat"><div class="num red" id="livedSecs">–</div><div class="lbl">seconds — ticking live</div></div>
+    </div>
+    <p class="big-line" id="nextBirthday"></p>
+    <p class="fun" id="funFacts"></p>
+  </div>
+
+  <div class="card">
+    <h2>⏰ Time you have <span>left</span></h2>
+    <p>Counted down to the age you entered above. Life expectancy is only an average — nobody knows how long anyone will actually live.</p>
+    <div class="grid">
+      <div class="stat"><div class="num" id="leftYears">–</div><div class="lbl">years left</div></div>
+      <div class="stat"><div class="num" id="leftDays">–</div><div class="lbl">days left</div></div>
+      <div class="stat"><div class="num" id="leftHours">–</div><div class="lbl">hours left</div></div>
+      <div class="stat"><div class="num" id="leftMins">–</div><div class="lbl">minutes left</div></div>
+      <div class="stat"><div class="num red" id="leftSecs">–</div><div class="lbl">seconds left — ticking down</div></div>
+    </div>
+    <div class="bar-wrap">
+      <div class="bar-label"><span>Life lived: <b id="pctLived">–</b></span><span>Left: <b id="pctLeft">–</b></span></div>
+      <div class="bar"><div class="bar-fill" id="barFill"></div></div>
+    </div>
+    <p class="note" id="leftNote"></p>
+    <div class="inputs" style="margin-top:18px;">
+      <button class="btn btn-light" id="copyBtn">Copy my result</button>
+    </div>
+  </div>
+
+  <section class="info card">
+    <h2>How it works</h2>
+    <ol>
+      <li>Enter your date of birth (and time, if you know it).</li>
+      <li>Pick the age you expect to live until — 80 is the default.</li>
+      <li>Watch your lived time tick up live, second by second, and your remaining time tick down.</li>
+      <li>Copy your result and share it with a friend — who has lived longer, you or them?</li>
+    </ol>
+    <div class="faq">
+      <h2>Questions</h2>
+      <h3>Is the "time left" number real?</h3>
+      <p>No — it is a countdown to the age you typed in, nothing more. Average life expectancy in most countries is around 70–80 years, but that is an average across millions of people. It cannot predict any one person's life. This tool is for fun and reflection, not a prediction.</p>
+      <h3>Why do the seconds keep running?</h3>
+      <p>Because you are alive right now — every second that passes adds one more second to your life. The numbers update every second, live in your browser.</p>
+      <h3>Is my birthday sent anywhere?</h3>
+      <p>No. The calculation happens entirely in your own browser. Your birthday is never uploaded, stored or shared.</p>
+      <h3>What are the heartbeat and breath numbers?</h3>
+      <p>Rough estimates: an average resting heart beats about 70 times a minute and a person breathes about 16 times a minute. Multiply those by the seconds you have lived and you get a fun sense of the scale — they are estimates, not measurements.</p>
+    </div>
+  </section>
+
+  <footer>Free tool by Malik Subhan · <a href="/">maliksubhan.top</a></footer>
+  <p class="tags">#HowLongHaveILived #TimeLived #LifeCalculator #AgeInDays #TimeLeft</p>
+</div>
+
+<script>
+function fmt(n) { return Math.floor(n).toLocaleString('en-US'); }
+function $(id) { return document.getElementById(id); }
+
+function parseBirth() {
+  var d = $('dob').value;
+  if (!d) return null;
+  var p = d.split('-');
+  var t = ($('tob').value || '00:00').split(':');
+  return new Date(+p[0], +p[1] - 1, +p[2], +t[0], +t[1] || 0, 0);
+}
+
+function showError(msg) {
+  var e = $('error');
+  e.textContent = msg;
+  e.style.display = 'block';
+  setTimeout(function () { e.style.display = 'none'; }, 4000);
+}
+
+function update() {
+  var birth = parseBirth();
+  if (!birth || isNaN(birth.getTime())) return;
+  var now = new Date();
+  var livedMs = now - birth;
+  if (livedMs < 0) { showError('That birthday is in the future — pick a date in the past.'); return; }
+  var livedSec = Math.floor(livedMs / 1000);
+
+  var years = now.getFullYear() - birth.getFullYear();
+  var anniv = new Date(now.getFullYear(), birth.getMonth(), birth.getDate(), birth.getHours(), birth.getMinutes());
+  if (now < anniv) years--;
+
+  $('livedYears').textContent = fmt(years);
+  $('livedDays').textContent = fmt(livedSec / 86400);
+  $('livedHours').textContent = fmt(livedSec / 3600);
+  $('livedMins').textContent = fmt(livedSec / 60);
+  $('livedSecs').textContent = fmt(livedSec);
+
+  var nextB = new Date(now.getFullYear(), birth.getMonth(), birth.getDate());
+  if (nextB < now) nextB.setFullYear(now.getFullYear() + 1);
+  var daysToB = Math.ceil((nextB - now) / 86400000);
+  $('nextBirthday').innerHTML = 'Your next birthday is in <b>' + fmt(daysToB) + ' days</b>.';
+
+  var beats = Math.round(livedSec * 70 / 60);
+  var breaths = Math.round(livedSec * 16 / 60);
+  $('funFacts').textContent = 'About ' + fmt(beats) + ' heartbeats and ' + fmt(breaths) + ' breaths so far.';
+
+  var exp = parseInt($('exp').value, 10);
+  if (!exp || exp < 40) exp = 80;
+  if (exp > 120) exp = 120;
+  var death = new Date(birth);
+  death.setFullYear(death.getFullYear() + exp);
+  var leftMs = death - now;
+  var totalMs = death - birth;
+  var pct = Math.min(100, Math.max(0, livedMs / totalMs * 100));
+
+  if (leftMs <= 0) {
+    $('leftYears').textContent = '0';
+    $('leftDays').textContent = '0';
+    $('leftHours').textContent = '0';
+    $('leftMins').textContent = '0';
+    $('leftSecs').textContent = '0';
+    $('leftNote').textContent = 'You have already passed age ' + exp + ' — every day now is bonus time.';
+  } else {
+    var leftSec = Math.floor(leftMs / 1000);
+    $('leftYears').textContent = (leftSec / 31557600).toFixed(1);
+    $('leftDays').textContent = fmt(leftSec / 86400);
+    $('leftHours').textContent = fmt(leftSec / 3600);
+    $('leftMins').textContent = fmt(leftSec / 60);
+    $('leftSecs').textContent = fmt(leftSec);
+    $('leftNote').textContent = 'Counting down to age ' + exp + ' — ' + death.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) + '.';
+  }
+  $('pctLived').textContent = pct.toFixed(1) + '%';
+  $('pctLeft').textContent = (100 - pct).toFixed(1) + '%';
+  $('barFill').style.width = pct + '%';
+}
+
+$('calcBtn').addEventListener('click', update);
+$('dob').addEventListener('change', update);
+$('tob').addEventListener('change', update);
+$('exp').addEventListener('change', update);
+$('copyBtn').addEventListener('click', function () {
+  var exp = parseInt($('exp').value, 10) || 80;
+  var text = 'I have lived ' + $('livedDays').textContent + ' days (' + $('livedSecs').textContent + ' seconds and counting) and have about ' + $('leftDays').textContent + ' days left until age ' + exp + '. Check yours: https://tool.maliksubhan.top/time-calculator/';
+  var btn = $('copyBtn');
+  function done() { btn.textContent = 'Copied!'; setTimeout(function () { btn.textContent = 'Copy my result'; }, 1500); }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done).catch(function () { window.prompt('Copy your result:', text); });
+  } else { window.prompt('Copy your result:', text); }
+});
+
+update();
+setInterval(update, 1000);
+</script>
+</body>
+</html>

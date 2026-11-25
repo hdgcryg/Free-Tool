@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GapPilot — What Can You Finish in the Time You Have?</title>
+<meta name="description" content="You have 23 minutes before you leave — what can you actually finish? Enter your time, energy and tasks, and GapPilot packs a realistic plan that fits. Free, no sign-up.">
+<meta name="keywords" content="what can i finish in 20 minutes, time gap planner, what can i do in 30 minutes, task packer, spare time planner, realistic daily plan, micro task planner">
+<meta property="og:type" content="website">
+<meta property="og:title" content="GapPilot — What Can You Finish in the Time You Have?">
+<meta property="og:description" content="You have 23 minutes before you leave. What can you actually finish? GapPilot packs your tasks into a realistic plan — with setup time, energy and a safety buffer. Free, no sign-up.">
+<meta property="og:url" content="https://tool.maliksubhan.top/gap-pilot/">
+<meta property="og:image" content="https://tool.maliksubhan.top/og-gap.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GapPilot — What Can I Realistically Finish in X Minutes?">
+<meta name="twitter:description" content="Pack your tasks into the time you actually have — realistic, with setup time and a safety buffer. Free, no sign-up.">
+<meta name="twitter:image" content="https://tool.maliksubhan.top/og-gap.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"GapPilot — What Can I Realistically Finish in X Minutes?","url":"https://tool.maliksubhan.top/gap-pilot/","description":"GapPilot packs your tasks into the time you actually have. Enter your minutes, energy and location, list your tasks, and get a realistic plan with setup time and a safety buffer. Free, no sign-up.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, Helvetica, sans-serif; background: #f4f6f8; color: #1a1a1a; line-height: 1.6; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 24px 16px 48px; }
+  .crumbs { font-size: 13px; color: #888; margin-bottom: 8px; }
+  .crumbs a { color: #888; }
+  header { text-align: center; padding: 28px 0 4px; }
+  header h1 { font-size: 30px; line-height: 1.25; }
+  header h1 span { color: #0a7d5c; }
+  header p { color: #555; margin-top: 8px; font-size: 16px; max-width: 640px; margin-left: auto; margin-right: auto; }
+  .card { background: #fff; border: 1px solid #e2e2e2; border-radius: 12px; padding: 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-top: 24px; }
+  .card h2 { font-size: 20px; margin-bottom: 6px; }
+  .card h2 span { color: #0a7d5c; }
+  .card p { color: #555; font-size: 14px; }
+  .field label { display: block; font-size: 13px; font-weight: bold; color: #444; margin-bottom: 6px; }
+  .field input[type=number] { width: 130px; padding: 11px 12px; font-size: 16px; border: 2px solid #ccc; border-radius: 8px; font-family: Arial, Helvetica, sans-serif; }
+  .field input[type=number]:focus { border-color: #0a7d5c; outline: none; }
+  .seg { display: inline-flex; border: 2px solid #ccc; border-radius: 8px; overflow: hidden; }
+  .seg button { border: none; background: #fff; padding: 10px 16px; font-size: 14px; font-weight: bold; cursor: pointer; color: #444; }
+  .seg button.on { background: #0a7d5c; color: #fff; }
+  .row-label { font-size: 13px; font-weight: bold; color: #444; margin: 16px 0 6px; }
+  .top-inputs { display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-end; margin-top: 14px; }
+  .task-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; padding: 10px 0; border-bottom: 1px solid #eee; }
+  .task-row:last-child { border-bottom: none; }
+  .task-row input[type=text] { flex: 2 1 160px; padding: 10px 12px; font-size: 15px; border: 2px solid #ccc; border-radius: 8px; font-family: Arial, Helvetica, sans-serif; min-width: 140px; }
+  .task-row input[type=number] { width: 84px; padding: 10px 8px; font-size: 15px; border: 2px solid #ccc; border-radius: 8px; font-family: Arial, Helvetica, sans-serif; }
+  .task-row select { padding: 10px 6px; font-size: 14px; border: 2px solid #ccc; border-radius: 8px; font-family: Arial, Helvetica, sans-serif; background: #fff; }
+  .task-row input:focus, .task-row select:focus { border-color: #0a7d5c; outline: none; }
+  .rm { border: none; background: none; font-size: 20px; color: #c00; cursor: pointer; padding: 4px 8px; }
+  .btn { background: #0a7d5c; color: #fff; border: none; border-radius: 8px; padding: 12px 22px; font-size: 15px; font-weight: bold; cursor: pointer; }
+  .btn:hover { background: #066647; }
+  .btn-light { background: #eee; color: #1a1a1a; }
+  .btn-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+  .error { display: none; background: #fdecea; color: #b3261e; border: 1px solid #f5c6c2; border-radius: 8px; padding: 10px 12px; margin-top: 12px; font-size: 14px; }
+  .plan-head { font-size: 18px; font-weight: bold; margin-top: 4px; }
+  .plan-head span { color: #0a7d5c; }
+  .timeline { display: flex; height: 34px; border-radius: 8px; overflow: hidden; margin-top: 16px; border: 1px solid #ddd; }
+  .timeline div { height: 100%; }
+  .legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 13px; color: #555; margin-top: 8px; }
+  .legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+  .plan-list { margin-top: 16px; }
+  .plan-item { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid #eee; align-items: baseline; }
+  .plan-item:last-child { border-bottom: none; }
+  .plan-item .n { font-weight: bold; color: #0a7d5c; min-width: 22px; }
+  .plan-item .t { font-weight: bold; flex: 1; }
+  .plan-item .d { color: #555; font-size: 14px; white-space: nowrap; }
+  .totals { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+  .totals .stat { flex: 1 1 120px; background: #f4f6f8; border-radius: 10px; padding: 14px 10px; text-align: center; }
+  .totals .num { font-size: 26px; font-weight: bold; }
+  .totals .num.green { color: #0a7d5c; }
+  .totals .lbl { font-size: 13px; color: #666; margin-top: 2px; }
+  .skipped { margin-top: 16px; }
+  .skipped h3 { font-size: 15px; margin-bottom: 6px; }
+  .skipped li { color: #555; font-size: 14px; margin-left: 18px; }
+  .note { margin-top: 12px; font-size: 13px; color: #777; }
+  section.info h2 { font-size: 20px; margin-bottom: 8px; }
+  section.info ol { margin-left: 20px; color: #444; }
+  .faq h3 { font-size: 16px; margin-top: 14px; }
+  .faq p { color: #444; }
+  footer { text-align: center; color: #888; font-size: 13px; margin-top: 40px; }
+  footer a { color: #888; }
+  .tags { text-align: center; color: #888; font-size: 13px; margin-top: 12px; }
+  #results { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="crumbs"><a href="/">← All free tools</a></p>
+  <header>
+    <h1>✈️ <span>GapPilot</span></h1>
+    <p>You have a gap before you leave. What can you <b>realistically</b> finish in it? Tell GapPilot your time, your energy and where you are — it packs a plan that fits, with setup time and a safety buffer built in.</p>
+  </header>
+
+  <div class="card">
+    <h2>Your <span>gap</span></h2>
+    <div class="top-inputs">
+      <div class="field">
+        <label for="avail">Minutes you have</label>
+        <input type="number" id="avail" value="23" min="1" max="480">
+      </div>
+      <div class="field">
+        <label>Your energy right now</label>
+        <div class="seg" id="energySeg">
+          <button type="button" data-v="3">High</button>
+          <button type="button" data-v="2">Medium</button>
+          <button type="button" data-v="1" class="on">Low</button>
+        </div>
+      </div>
+      <div class="field">
+        <label>Where are you?</label>
+        <div class="seg" id="locSeg">
+          <button type="button" data-v="home" class="on">Home</button>
+          <button type="button" data-v="office">Office</button>
+          <button type="button" data-v="out">Out</button>
+          <button type="button" data-v="anywhere">Anywhere</button>
+        </div>
+      </div>
+    </div>
+    <div class="error" id="error"></div>
+  </div>
+
+  <div class="card">
+    <h2>Your <span>tasks</span></h2>
+    <p>Your order is your priority — GapPilot packs from the top of your list first. Each task costs its minutes <b>plus 2 minutes</b> to start it and switch to the next one. Nothing is uploaded anywhere.</p>
+    <div id="taskList"></div>
+    <div class="btn-row">
+      <button class="btn btn-light" id="addBtn">+ Add a task</button>
+      <button class="btn btn-light" id="clearBtn">Clear all</button>
+    </div>
+  </div>
+
+  <div class="btn-row" style="justify-content:center;">
+    <button class="btn" id="calcBtn" style="padding:14px 40px; font-size:18px;">Build my plan ✈️</button>
+    <button class="btn btn-light" id="shuffleBtn">Shuffle &amp; rebuild</button>
+  </div>
+
+  <div class="card" id="results">
+    <h2>Your <span>plan</span></h2>
+    <div class="plan-head" id="planHead"></div>
+    <div class="timeline" id="timeline"></div>
+    <div class="legend">
+      <span><i style="background:#0a7d5c;"></i>Tasks</span>
+      <span><i style="background:#f5b301;"></i>Safety buffer</span>
+      <span><i style="background:#e8e8e8;"></i>Free time left</span>
+    </div>
+    <div class="plan-list" id="planList"></div>
+    <div class="totals">
+      <div class="stat"><div class="num green" id="totUsed">–</div><div class="lbl">minutes used</div></div>
+      <div class="stat"><div class="num" id="totBuffer">–</div><div class="lbl">safety buffer</div></div>
+      <div class="stat"><div class="num green" id="totFree">–</div><div class="lbl">free time left</div></div>
+    </div>
+    <div class="skipped" id="skippedBox" style="display:none;">
+      <h3>Didn't fit this time</h3>
+      <ul id="skippedList"></ul>
+    </div>
+    <p class="note">Every task includes 1 minute to start it and 1 minute to switch. The safety buffer (10% of your time, at least 2 minutes) is kept free so a small delay doesn't break the plan. GapPilot only ever packs tasks you entered — it never invents tasks.</p>
+    <div class="btn-row">
+      <button class="btn btn-light" id="copyBtn">Copy my plan</button>
+    </div>
+  </div>
+
+  <section class="info card">
+    <h2>How GapPilot packs your plan</h2>
+    <ol>
+      <li><b>It respects your energy.</b> Low energy? Only low-energy tasks get in. High-energy jobs wait for a better moment.</li>
+      <li><b>It respects where you are.</b> A task that needs the office won't be packed while you're at home.</li>
+      <li><b>It respects order.</b> Tasks that depend on another task only go in after that task. And your list order is your priority — top first.</li>
+      <li><b>It adds real costs.</b> Every task gets 1 minute to start and 1 minute to switch, because in real life nothing starts instantly.</li>
+      <li><b>It keeps a buffer.</b> 10% of your time stays free, so one slow task doesn't wreck the whole plan.</li>
+      <li><b>It fills honestly.</b> If a task doesn't fit, it says so — and tells you why. It never invents filler tasks.</li>
+    </ol>
+    <div class="faq">
+      <h2>Questions</h2>
+      <h3>Why did my plan leave free time?</h3>
+      <p>Because the next task didn't fit in the time left — and packing a task you can't finish is worse than leaving the minutes free. Use the Shuffle button to try a different combination, or pick a shorter task.</p>
+      <h3>What does "needs high energy" mean?</h3>
+      <p>Each task has an energy level you set. If you tell GapPilot your energy is low, it only packs low-energy tasks, so the plan is one you can actually do right now.</p>
+      <h3>Why is there a safety buffer?</h3>
+      <p>Because real life runs late. The buffer is 10% of your available time (at least 2 minutes) kept free on purpose — it's what makes the plan realistic instead of a fantasy.</p>
+      <h3>Is my task list saved anywhere?</h3>
+      <p>No. Everything happens in your browser. Your tasks are never uploaded or stored.</p>
+    </div>
+  </section>
+
+  <footer>Free tool by Malik Subhan · <a href="/">maliksubhan.top</a></footer>
+  <p class="tags">#GapPilot #WhatCanIFinish #TimeGap #SpareTime #ProductivityTool</p>
+</div>
+
+<script>
+var COLORS = ['#0a7d5c', '#2a9d8f', '#4363d8', '#7b5ea7', '#c05621', '#b03060', '#2f6f4f', '#8a6d00'];
+var taskIdSeq = 0;
+var userEnergy = 1;
+var userLoc = 'home';
+
+function $(id) { return document.getElementById(id); }
+function energyName(v) { return v === 3 ? 'High' : v === 2 ? 'Medium' : 'Low'; }
+function locName(v) { return v === 'home' ? 'Home' : v === 'office' ? 'Office' : v === 'out' ? 'Out' : 'Anywhere'; }
+
+function showError(msg) {
+  var e = $('error');
+  e.textContent = msg;
+  e.style.display = 'block';
+  setTimeout(function () { e.style.display = 'none'; }, 4000);
+}
+
+function segInit(segId, cb) {
+  var seg = $(segId);
+  seg.addEventListener('click', function (e) {
+    var b = e.target.closest('button');
+    if (!b) return;
+    seg.querySelectorAll('button').forEach(function (x) { x.classList.remove('on'); });
+    b.classList.add('on');
+    cb(b.dataset.v);
+  });
+}
+segInit('energySeg', function (v) { userEnergy = parseInt(v, 10); });
+segInit('locSeg', function (v) { userLoc = v; });
+
+function addTask(name, mins, energy, loc) {
+  var id = ++taskIdSeq;
+  var row = document.createElement('div');
+  row.className = 'task-row';
+  row.dataset.id = id;
+  row.innerHTML =
+    '<input type="text" class="t-name" placeholder="Task name" value="' + (name || '').replace(/"/g, '&quot;') + '">' +
+    '<input type="number" class="t-mins" min="1" max="480" value="' + (mins || 10) + '" title="Minutes">' +
+    '<select class="t-energy" title="Energy needed">' +
+      '<option value="1"' + (energy === 1 ? ' selected' : '') + '>Low energy</option>' +
+      '<option value="2"' + (energy === 2 ? ' selected' : '') + '>Medium energy</option>' +
+      '<option value="3"' + (energy === 3 ? ' selected' : '') + '>High energy</option>' +
+    '</select>' +
+    '<select class="t-loc" title="Where">' +
+      '<option value="anywhere"' + (loc === 'anywhere' ? ' selected' : '') + '>Anywhere</option>' +
+      '<option value="home"' + (loc === 'home' ? ' selected' : '') + '>Home</option>' +
+      '<option value="office"' + (loc === 'office' ? ' selected' : '') + '>Office</option>' +
+      '<option value="out"' + (loc === 'out' ? ' selected' : '') + '>Out</option>' +
+    '</select>' +
+    '<select class="t-dep" title="Do after (optional)"><option value="">After: none</option></select>' +
+    '<button type="button" class="rm" title="Remove task">✕</button>';
+  row.querySelector('.rm').addEventListener('click', function () { row.remove(); refreshDepends(); });
+  row.querySelector('.t-name').addEventListener('input', refreshDepends);
+  $('taskList').appendChild(row);
+  refreshDepends();
+}
+
+function readTasks() {
+  var out = [];
+  document.querySelectorAll('#taskList .task-row').forEach(function (row) {
+    var name = row.querySelector('.t-name').value.trim();
+    var mins = parseInt(row.querySelector('.t-mins').value, 10);
+    if (!name || !mins || mins < 1) return;
+    out.push({
+      name: name,
+      mins: Math.min(mins, 480),
+      energy: parseInt(row.querySelector('.t-energy').value, 10),
+      loc: row.querySelector('.t-loc').value,
+      depends: row.querySelector('.t-dep').value || ''
+    });
+  });
+  return out;
+}
+
+function refreshDepends() {
+  var names = readTasks().map(function (t) { return t.name; });
+  document.querySelectorAll('#taskList .task-row').forEach(function (row) {
+    var sel = row.querySelector('.t-dep');
+    var cur = sel.value;
+    var myName = row.querySelector('.t-name').value.trim();
+    sel.innerHTML = '<option value="">After: none</option>';
+    names.forEach(function (n) {
+      if (n && n !== myName) {
+        var o = document.createElement('option');
+        o.value = n; o.textContent = 'After: ' + n;
+        sel.appendChild(o);
+      }
+    });
+    if (cur && names.indexOf(cur) !== -1 && cur !== myName) sel.value = cur;
+  });
+}
+
+function fmtClock(mins) {
+  var h = Math.floor(mins / 60), m = mins % 60;
+  return h > 0 ? h + ':' + String(m).padStart(2, '0') : '0:' + String(m).padStart(2, '0');
+}
+
+function buildPlan(order) {
+  var avail = parseInt($('avail').value, 10);
+  if (!avail || avail < 1) { showError('Enter how many minutes you have.'); return null; }
+  if (!order.length) { showError('Add at least one task first.'); return null; }
+  var buffer = Math.max(2, Math.round(avail * 0.10));
+  var usable = Math.max(0, avail - buffer);
+  var remaining = usable;
+  var plan = [];
+  var skipped = [];
+
+  function tryAdd(t, record) {
+    if (t.energy > userEnergy) {
+      if (record) skipped.push({ t: t, reason: 'needs ' + energyName(t.energy) + ' energy — your energy is ' + energyName(userEnergy), kind: 'energy' });
+      return false;
+    }
+    if (t.loc !== 'anywhere' && t.loc !== userLoc) {
+      if (record) skipped.push({ t: t, reason: 'needs to be at ' + locName(t.loc) + ' — you are at ' + locName(userLoc), kind: 'loc' });
+      return false;
+    }
+    if (t.depends) {
+      var depIn = plan.some(function (x) { return x.name === t.depends; });
+      if (!depIn) {
+        if (record) skipped.push({ t: t, reason: 'needs "' + t.depends + '" first — it is not in the plan', kind: 'dep' });
+        return false;
+      }
+    }
+    var cost = t.mins + 2;
+    if (cost > remaining) {
+      if (record) skipped.push({ t: t, reason: 'needs ' + cost + ' min with setup — only ' + remaining + ' min left', kind: 'time' });
+      return false;
+    }
+    plan.push(t);
+    remaining -= cost;
+    return true;
+  }
+
+  order.forEach(function (t) { tryAdd(t, true); });
+  var retry = skipped.filter(function (s) { return s.kind === 'time'; }).map(function (s) { return s.t; });
+  retry.forEach(function (t) {
+    if (tryAdd(t, false)) {
+      var i = skipped.findIndex(function (s) { return s.t === t; });
+      if (i !== -1) skipped.splice(i, 1);
+    }
+  });
+
+  return { avail: avail, buffer: buffer, usable: usable, plan: plan, skipped: skipped, remaining: remaining };
+}
+
+function render(result) {
+  $('results').style.display = 'block';
+  var used = result.usable - result.remaining;
+  var taskMins = result.plan.reduce(function (s, t) { return s + t.mins; }, 0);
+  $('planHead').innerHTML = 'Your <span>' + result.avail + '-minute plan</span> — ' + taskMins + ' minutes of tasks, ' + result.plan.length + (result.plan.length === 1 ? ' task' : ' tasks') + ' packed';
+
+  var tl = $('timeline');
+  tl.innerHTML = '';
+  var total = result.avail;
+  result.plan.forEach(function (t, i) {
+    var seg = document.createElement('div');
+    seg.style.width = ((t.mins + 2) / total * 100) + '%';
+    seg.style.background = COLORS[i % COLORS.length];
+    seg.title = t.name + ' — ' + t.mins + ' min';
+    tl.appendChild(seg);
+  });
+  var b = document.createElement('div');
+  b.style.width = (result.buffer / total * 100) + '%';
+  b.style.background = '#f5b301';
+  b.title = 'Safety buffer — ' + result.buffer + ' min';
+  tl.appendChild(b);
+  var free = result.avail - used - result.buffer;
+  if (free > 0) {
+    var f = document.createElement('div');
+    f.style.width = (free / total * 100) + '%';
+    f.style.background = '#e8e8e8';
+    f.title = 'Free time — ' + free + ' min';
+    tl.appendChild(f);
+  }
+
+  var list = $('planList');
+  list.innerHTML = '';
+  var clock = 0;
+  result.plan.forEach(function (t, i) {
+    var cost = t.mins + 2;
+    var div = document.createElement('div');
+    div.className = 'plan-item';
+    div.innerHTML = '<div class="n">' + (i + 1) + '</div><div class="t">' + t.name.replace(/</g, '&lt;') + '</div><div class="d">' + fmtClock(clock) + ' – ' + fmtClock(clock + cost) + ' · ' + t.mins + ' min</div>';
+    list.appendChild(div);
+    clock += cost;
+  });
+
+  $('totUsed').textContent = used + ' min';
+  $('totBuffer').textContent = result.buffer + ' min';
+  $('totFree').textContent = free + ' min';
+
+  var box = $('skippedBox');
+  if (result.skipped.length) {
+    box.style.display = 'block';
+    var ul = $('skippedList');
+    ul.innerHTML = '';
+    result.skipped.forEach(function (s) {
+      var li = document.createElement('li');
+      li.textContent = s.t.name + ' (' + s.t.mins + ' min) — ' + s.reason + '.';
+      ul.appendChild(li);
+    });
+  } else {
+    box.style.display = 'none';
+  }
+  $('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+var lastResult = null;
+function run() {
+  var tasks = readTasks();
+  var r = buildPlan(tasks);
+  if (!r) return;
+  lastResult = r;
+  render(r);
+}
+
+$('calcBtn').addEventListener('click', run);
+$('shuffleBtn').addEventListener('click', function () {
+  var list = $('taskList');
+  var rows = Array.prototype.slice.call(list.children);
+  for (var i = rows.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var tmp = rows[i]; rows[i] = rows[j]; rows[j] = tmp;
+  }
+  rows.forEach(function (r) { list.appendChild(r); });
+  refreshDepends();
+  run();
+});
+$('addBtn').addEventListener('click', function () { addTask('', 10, 1, 'anywhere'); });
+$('clearBtn').addEventListener('click', function () {
+  $('taskList').innerHTML = '';
+  addTask('', 10, 1, 'anywhere');
+  $('results').style.display = 'none';
+});
+$('copyBtn').addEventListener('click', function () {
+  if (!lastResult) return;
+  var lines = ['My ' + lastResult.avail + '-minute plan (GapPilot):'];
+  var clock = 0;
+  lastResult.plan.forEach(function (t, i) {
+    lines.push((i + 1) + '. ' + t.name + ' — ' + t.mins + ' min (' + fmtClock(clock) + '–' + fmtClock(clock + t.mins + 2) + ')');
+    clock += t.mins + 2;
+  });
+  var free = lastResult.avail - (lastResult.usable - lastResult.remaining) - lastResult.buffer;
+  lines.push('Free time left: ' + free + ' min · Buffer: ' + lastResult.buffer + ' min');
+  lines.push('Made with GapPilot: https://tool.maliksubhan.top/gap-pilot/');
+  var text = lines.join('\n');
+  var btn = $('copyBtn');
+  function done() { btn.textContent = 'Copied!'; setTimeout(function () { btn.textContent = 'Copy my plan'; }, 1500); }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done).catch(function () { window.prompt('Copy your plan:', text); });
+  } else { window.prompt('Copy your plan:', text); }
+});
+
+addTask('Wash dishes', 10, 1, 'home');
+addTask('Reply to emails', 8, 1, 'anywhere');
+addTask('Clean room', 20, 2, 'home');
+addTask('Pack bag', 5, 1, 'home');
+</script>
+</body>
+</html>

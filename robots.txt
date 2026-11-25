@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tool.maliksubhan.top/sitemap.xml
