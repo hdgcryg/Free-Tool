@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BD70WD6GVM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BD70WD6GVM');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solar Quote Checker Pakistan — Is Your Quote Fair?</title>
+<meta name="description" content="Got a solar quotation in Pakistan? Paste in the price, panels, inverter and battery and check if the quote is fair — price per watt, panel-to-inverter ratio, battery usable capacity, and what is missing. Free, no sign-up.">
+<meta name="keywords" content="solar quote checker pakistan, check solar quotation pakistan, solar panel price per watt pakistan, is my solar quote fair, solar system price pakistan, hybrid solar price pakistan, solar inverter price pakistan, lithium battery price pakistan">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Solar Quote Checker Pakistan — Is Your Quote Fair?">
+<meta property="og:description" content="Paste your solar quotation in and check it before you pay: price per watt, panel-to-inverter ratio, battery usable capacity, and the details your installer left out. Free, no sign-up.">
+<meta property="og:url" content="https://tool.maliksubhan.top/solar-quote-checker/">
+<meta property="og:image" content="https://tool.maliksubhan.top/og-solar.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Solar Quote Checker Pakistan — Is Your Quote Fair?">
+<meta name="twitter:description" content="Check your solar quotation before you pay: price per watt, panel-to-inverter ratio, battery usable capacity, and what is missing. Free, no sign-up.">
+<meta name="twitter:image" content="https://tool.maliksubhan.top/og-solar.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Solar Quote Checker Pakistan","url":"https://tool.maliksubhan.top/solar-quote-checker/","description":"Check a solar installation quotation in Pakistan: price per watt against current market rates, panel-to-inverter ratio, battery usable capacity, missing details and questions to ask the installer. Free, no sign-up.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, Helvetica, sans-serif; background: #f4f6f8; color: #1a1a1a; line-height: 1.6; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 24px 16px 48px; }
+  .crumbs { font-size: 13px; color: #888; margin-bottom: 8px; }
+  .crumbs a { color: #888; }
+  header { text-align: center; padding: 28px 0 4px; }
+  header h1 { font-size: 30px; line-height: 1.25; }
+  header h1 span { color: #d97706; }
+  header p { color: #555; margin-top: 8px; font-size: 16px; max-width: 660px; margin-left: auto; margin-right: auto; }
+  .card { background: #fff; border: 1px solid #e2e2e2; border-radius: 12px; padding: 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-top: 24px; }
+  .card h2 { font-size: 20px; margin-bottom: 6px; }
+  .card h2 span { color: #d97706; }
+  .card p { color: #555; font-size: 14px; }
+  .field { margin-top: 14px; }
+  .field label { display: block; font-size: 13px; font-weight: bold; color: #444; margin-bottom: 6px; }
+  .field input, .field select { padding: 11px 12px; font-size: 16px; border: 2px solid #ccc; border-radius: 8px; font-family: Arial, Helvetica, sans-serif; background: #fff; }
+  .field input:focus, .field select:focus { border-color: #d97706; outline: none; }
+  .field input[type=number] { width: 160px; }
+  .field select { max-width: 100%; }
+  .grid { display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-end; }
+  .hint { font-size: 13px; color: #888; margin-top: 4px; }
+  .seg { display: flex; gap: 8px; flex-wrap: wrap; }
+  .seg button { border: 2px solid #ccc; background: #fff; border-radius: 8px; padding: 10px 18px; font-size: 15px; cursor: pointer; font-family: Arial, Helvetica, sans-serif; }
+  .seg button.on { background: #d97706; color: #fff; border-color: #d97706; font-weight: bold; }
+  .checks { margin-top: 10px; }
+  .checks label { display: block; font-weight: normal; font-size: 15px; color: #333; padding: 6px 0; cursor: pointer; }
+  .checks input { margin-right: 8px; transform: scale(1.2); }
+  .btn { background: #d97706; color: #fff; border: none; border-radius: 8px; padding: 12px 22px; font-size: 15px; font-weight: bold; cursor: pointer; }
+  .btn:hover { background: #b45309; }
+  .btn-light { background: #eee; color: #1a1a1a; }
+  .btn-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+  .error { display: none; background: #fdecea; color: #b3261e; border: 1px solid #f5c6c2; border-radius: 8px; padding: 10px 12px; margin-top: 12px; font-size: 14px; }
+  .verdict { text-align: center; padding: 20px 10px 8px; }
+  .verdict .big { font-size: 34px; font-weight: bold; }
+  .verdict .big.good { color: #0a7d5c; }
+  .verdict .big.warn { color: #b7791f; }
+  .verdict .big.bad { color: #b3261e; }
+  .verdict .big.low { color: #6d28d9; }
+  .verdict p { color: #444; font-size: 15px; margin-top: 6px; }
+  .totals { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+  .totals .stat { flex: 1 1 140px; background: #f4f6f8; border-radius: 10px; padding: 14px 10px; text-align: center; }
+  .totals .num { font-size: 24px; font-weight: bold; }
+  .totals .num.green { color: #0a7d5c; }
+  .totals .num.red { color: #b3261e; }
+  .totals .num.amber { color: #b7791f; }
+  .totals .lbl { font-size: 13px; color: #666; margin-top: 2px; }
+  .findings { margin-top: 16px; }
+  .finding { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px solid #eee; align-items: baseline; }
+  .finding:last-child { border-bottom: none; }
+  .finding .dot { font-size: 18px; line-height: 1; min-width: 22px; text-align: center; }
+  .finding .dot.ok { color: #0a7d5c; }
+  .finding .dot.warn { color: #b7791f; }
+  .finding .dot.bad { color: #b3261e; }
+  .finding .t { font-weight: bold; }
+  .finding .d { color: #555; font-size: 14px; }
+  .qlist { margin-top: 12px; }
+  .qlist li { margin-left: 18px; color: #444; margin-bottom: 6px; }
+  .note { margin-top: 12px; font-size: 13px; color: #777; }
+  section.info h2 { font-size: 20px; margin-bottom: 8px; }
+  section.info ol, section.info ul { margin-left: 20px; color: #444; }
+  section.info li { margin-bottom: 6px; }
+  .faq h3 { font-size: 16px; margin-top: 14px; }
+  .faq p { color: #444; }
+  .src { font-size: 13px; color: #777; }
+  .src a { color: #777; }
+  table.bench { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; }
+  table.bench th, table.bench td { border: 1px solid #e2e2e2; padding: 8px 10px; text-align: left; }
+  table.bench th { background: #f4f6f8; }
+  footer { text-align: center; color: #888; font-size: 13px; margin-top: 40px; }
+  footer a { color: #888; }
+  .tags { text-align: center; color: #888; font-size: 13px; margin-top: 12px; }
+  #results { display: none; }
+  #batterySection { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="crumbs"><a href="/">← All free tools</a></p>
+  <header>
+    <h1>☀️ <span>Solar Quote Checker</span> — Pakistan</h1>
+    <p><b>Got a solar quotation and not sure if the price is fair?</b> Enter what your installer quoted — price, panels, inverter, battery — and this tool checks it against real Pakistan market rates from November 2026, so you know before you pay.</p>
+  </header>
+
+  <div class="card">
+    <h2>Your <span>system type</span></h2>
+    <p>This changes the fair price a lot — a hybrid system with batteries costs far more than an on-grid system of the same size. Pick the one on your quotation.</p>
+    <div class="seg" style="margin-top:12px;">
+      <button type="button" id="typeGrid" class="on">On-grid (no battery)</button>
+      <button type="button" id="typeHybrid">Hybrid (with battery)</button>
+    </div>
+    <div class="error" id="error"></div>
+  </div>
+
+  <div class="card">
+    <h2>The <span>quotation</span></h2>
+    <div class="grid">
+      <div class="field">
+        <label for="totalPrice">Total quoted price (Rs)</label>
+        <input type="number" id="totalPrice" value="900000" min="1" step="1000">
+        <div class="hint">The full price on the quotation, including installation.</div>
+      </div>
+      <div class="field">
+        <label for="panelCount">Number of panels</label>
+        <input type="number" id="panelCount" value="10" min="1" max="200">
+      </div>
+      <div class="field">
+        <label for="panelWatts">Panel size (watts each)</label>
+        <input type="number" id="panelWatts" value="585" min="50" max="1000">
+        <div class="hint">Usually 545–650W in Pakistan in 2026.</div>
+      </div>
+      <div class="field">
+        <label for="panelBrand">Panel brand</label>
+        <select id="panelBrand">
+          <option value="tier1">Longi / Jinko / Canadian Solar / JA Solar / Trina / Aiko</option>
+          <option value="other">Another brand (Inverex, Astronergy, etc.)</option>
+          <option value="unknown">Not written on the quotation</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="panelPrice">Price of panels only (Rs) — optional</label>
+        <input type="number" id="panelPrice" placeholder="e.g. 240000" min="1" step="1000">
+        <div class="hint">Only if your quotation breaks the panels out separately.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>The <span>inverter</span></h2>
+    <div class="grid">
+      <div class="field">
+        <label for="invKw">Inverter size (kW)</label>
+        <input type="number" id="invKw" value="5" min="1" max="100" step="0.5">
+      </div>
+      <div class="field">
+        <label for="invBrand">Inverter brand</label>
+        <select id="invBrand">
+          <option value="known">Inverex / Growatt / Huawei / GoodWe / Solis / Sungrow</option>
+          <option value="other">Another brand</option>
+          <option value="unknown">Not written on the quotation</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="invPrice">Price of inverter only (Rs) — optional</label>
+        <input type="number" id="invPrice" placeholder="e.g. 260000" min="1" step="1000">
+        <div class="hint">Only if your quotation breaks the inverter out separately.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" id="batterySection">
+    <h2>The <span>battery</span></h2>
+    <div class="grid">
+      <div class="field">
+        <label for="battType">Battery type</label>
+        <select id="battType">
+          <option value="lithium">Lithium (LiFePO4)</option>
+          <option value="tubular">Tubular lead-acid</option>
+          <option value="none">No battery in the quote</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="battKwh">Battery size (kWh)</label>
+        <input type="number" id="battKwh" value="5" min="0" max="100" step="0.5">
+        <div class="hint">If the quote says Ah instead: kWh ≈ Ah × volts ÷ 1000 (e.g. 200Ah × 12V = 2.4 kWh).</div>
+      </div>
+      <div class="field">
+        <label for="battPrice">Price of battery only (Rs) — optional</label>
+        <input type="number" id="battPrice" placeholder="e.g. 200000" min="1" step="1000">
+        <div class="hint">Only if your quotation breaks the battery out separately.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>What does the quotation <span>actually say?</span></h2>
+    <p>Tick what is written on your quotation. Anything unticked is a gap — the tool lists it below so you can ask for it in writing before you pay.</p>
+    <div class="checks" id="checks">
+      <label><input type="checkbox" id="ckGrade" checked> Panel grade written (A-grade, documented / Tier-1)</label>
+      <label><input type="checkbox" id="ckPanelWarranty" checked> Panel warranty years written (usually 10–12 years product, 25 years performance)</label>
+      <label><input type="checkbox" id="ckInvWarranty" checked> Inverter warranty years written (usually 5 years)</label>
+      <label><input type="checkbox" id="ckBattWarranty"> Battery warranty / cycle life written</label>
+      <label><input type="checkbox" id="ckStructure" checked> Structure / mounting type written (elevated, fixed, L2/L3)</label>
+      <label><input type="checkbox" id="ckNetBilling"> Net billing (green meter) application included</label>
+      <label><input type="checkbox" id="ckProtection"> Earthing, lightning protection and DC breakers listed</label>
+      <label><input type="checkbox" id="ckService"> After-sales service / free visits written</label>
+    </div>
+  </div>
+
+  <div class="btn-row" style="justify-content:center;">
+    <button class="btn" id="calcBtn" style="padding:14px 40px; font-size:18px;">Check my quote ☀️</button>
+  </div>
+
+  <div class="card" id="results">
+    <h2>Your <span>verdict</span></h2>
+    <div class="verdict"><div class="big" id="verdictBig"></div><p id="verdictText"></p></div>
+    <div class="totals">
+      <div class="stat"><div class="num" id="totDc">–</div><div class="lbl">system size (DC)</div></div>
+      <div class="stat"><div class="num" id="totPerW">–</div><div class="lbl">Rs per watt (whole system)</div></div>
+      <div class="stat"><div class="num" id="totRange">–</div><div class="lbl">fair range for this system</div></div>
+      <div class="stat"><div class="num" id="totRatio">–</div><div class="lbl">panel-to-inverter ratio</div></div>
+      <div class="stat" id="battStat" style="display:none;"><div class="num" id="totBatt">–</div><div class="lbl">battery usable capacity</div></div>
+    </div>
+    <div class="findings" id="findings"></div>
+    <h2 style="margin-top:24px;">Questions to ask <span>your installer</span></h2>
+    <ul class="qlist" id="qlist"></ul>
+    <p class="note" id="resultNote"></p>
+    <div class="btn-row">
+      <button class="btn btn-light" id="copyBtn">Copy my quote check</button>
+    </div>
+  </div>
+
+  <section class="info card">
+    <h2>How the check works</h2>
+    <ol>
+      <li><b>Price per watt:</b> your total price divided by your total panel watts. A complete on-grid system in Pakistan (panels + inverter + structure + installation, no battery) cost about <b>Rs 78–123 per watt</b> in late November 2026 — a 5&nbsp;kW system was Rs 3.96–5.79 lakh and a 10&nbsp;kW system Rs 7.79–12.23 lakh.</li>
+      <li><b>Battery adder:</b> for a hybrid system, lithium storage costs about <b>Rs 45,000–65,000 per kWh installed</b> (most quotes near Rs 52,000/kWh) — a 5&nbsp;kWh bank about Rs 2.62 lakh, a 10&nbsp;kWh bank about Rs 5.26 lakh. That is added to the fair range above.</li>
+      <li><b>Panels:</b> Tier-1 A-grade panels sold for about <b>Rs 38–45 per watt</b> (typical Rs 40/W) in November 2026. Cheaper panels exist, but they are usually lower-grade or lesser-known brands.</li>
+      <li><b>Panel-to-inverter ratio:</b> total panel kW divided by inverter kW. <b>1.0–1.3</b> is normal — a little more panel than inverter is good. Above 1.4 the inverter clips power on sunny days; below 0.9 you paid for inverter capacity you will not use.</li>
+      <li><b>Battery usable capacity:</b> a battery never gives you its full label size. Lithium (LiFePO4) gives about <b>90%</b> usable, tubular lead-acid only about <b>50%</b> — so a 5&nbsp;kWh lithium bank gives ~4.5&nbsp;kWh of backup, while a 5&nbsp;kWh tubular bank gives only ~2.5&nbsp;kWh.</li>
+    </ol>
+    <h2 style="margin-top:20px;">Today's market benchmarks — Pakistan, 26 November 2026</h2>
+    <table class="bench">
+      <tr><th>Item</th><th>Fair range</th></tr>
+      <tr><td>Tier-1 A-grade panels</td><td>Rs 38–45 / watt (typical Rs 40/W)</td></tr>
+      <tr><td>On-grid system, complete (no battery)</td><td>Rs 78–123 / watt</td></tr>
+      <tr><td>Hybrid inverter 3 kW</td><td>Rs 1,40,000 – 2,10,000</td></tr>
+      <tr><td>Hybrid inverter 5 kW</td><td>Rs 2,20,000 – 3,00,000</td></tr>
+      <tr><td>Hybrid inverter 10 kW</td><td>Rs 3,50,000 – 5,50,000</td></tr>
+      <tr><td>Lithium battery, installed</td><td>Rs 45,000 – 65,000 / kWh</td></tr>
+      <tr><td>Net billing export rate (Feb 2026 rules)</td><td>~Rs 8–11 per exported unit</td></tr>
+    </table>
+    <p class="note">Prices move every week with the dollar rate and new stock. These benchmarks were checked on 26 November 2026 — always confirm the current rate on the day you pay. A price alone never proves a quote is a scam: a high price can mean better brands and warranties, and a low price can mean lower-grade panels or missing items.</p>
+    <p class="src" style="margin-top:10px;">Sources: <a href="https://solarrate.pk/" target="_blank" rel="noopener">solarrate.pk — system prices &amp; panel rates, 26 Nov 2026</a> · <a href="https://pakroz.com/solar-rate" target="_blank" rel="noopener">pakroz.com — panel &amp; inverter rates, 26 Nov 2026</a> · <a href="https://www.zell.pk/solar-panel-price-in-pakistan" target="_blank" rel="noopener">zell.pk — panel prices by brand, Oct 2026</a> · <a href="https://www.solarcitizen.com.pk/lithium-battery-price-pakistan/" target="_blank" rel="noopener">solarcitizen.com.pk — lithium battery prices, Nov 2026</a> · <a href="https://enontraders.com/solar-battery-price-in-pakistan/" target="_blank" rel="noopener">enontraders.com — battery prices &amp; usable capacity, Aug 2026</a>.</p>
+    <div class="faq">
+      <h2>Questions</h2>
+      <h3>My quote is much cheaper than the fair range. Is that good?</h3>
+      <p>Not always. A very cheap quote often means B-grade or undocumented panels, a no-name inverter, a thin structure, or items left out (net billing application, earthing, wiring). Ask the installer to put the panel brand, model and grade in writing, and compare two more quotes before you decide.</p>
+      <h3>On-grid or hybrid — which should I pick?</h3>
+      <p>On-grid is cheaper and fine if you only want lower bills. Hybrid costs much more because of the battery, but it keeps your fans, lights and fridge running during load-shedding. Pick hybrid only if you need backup power — and size the battery from your backup load, not from the panel size.</p>
+      <h3>Why does net billing matter for my quote?</h3>
+      <p>Since February 2026, new solar connections in Pakistan are on net billing, not net metering: exported units earn only about Rs 8–11 each instead of one-for-one. So a bigger system does not pay back the way it used to — size the system for the electricity you use in the day, not for maximum export.</p>
+      <h3>What should be in writing before I pay anything?</h3>
+      <p>Panel brand, model, wattage and grade; inverter brand, model and warranty; battery brand, capacity, warranty and cycle life; structure type; what installation includes; and who applies for net billing. If it is not written down, it is not promised.</p>
+      <h3>Does this tool store my quotation?</h3>
+      <p>No. Everything happens in your browser. Nothing is uploaded or stored.</p>
+    </div>
+  </section>
+
+  <footer>Free tool by Malik Subhan · <a href="/">maliksubhan.top</a></footer>
+  <p class="tags">#SolarPakistan #SolarQuoteChecker #SolarPanelPricePakistan #SolarQuotation #HybridSolarPakistan</p>
+</div>
+
+<script>
+var sysType = 'grid';
+var battSection = document.getElementById('batterySection');
+
+function $(id) { return document.getElementById(id); }
+function num(id) { var v = parseFloat($(id).value); return isNaN(v) ? 0 : v; }
+function fmt(n) { return 'Rs ' + Math.round(n).toLocaleString('en-PK'); }
+
+function setType(t) {
+  sysType = t;
+  $('typeGrid').classList.toggle('on', t === 'grid');
+  $('typeHybrid').classList.toggle('on', t === 'hybrid');
+  battSection.style.display = t === 'hybrid' ? 'block' : 'none';
+}
+$('typeGrid').addEventListener('click', function () { setType('grid'); });
+$('typeHybrid').addEventListener('click', function () { setType('hybrid'); });
+setType('hybrid');
+
+function showError(msg) {
+  var e = $('error');
+  e.textContent = msg;
+  e.style.display = 'block';
+  setTimeout(function () { e.style.display = 'none'; }, 5000);
+}
+
+var lastResult = null;
+
+function addFinding(list, cls, title, detail) {
+  var div = document.createElement('div');
+  div.className = 'finding';
+  var icon = cls === 'ok' ? '✓' : cls === 'warn' ? '!' : '✕';
+  div.innerHTML = '<div class="dot ' + cls + '">' + icon + '</div><div><div class="t">' + title + '</div><div class="d">' + detail + '</div></div>';
+  list.appendChild(div);
+}
+
+function calc() {
+  var total = num('totalPrice');
+  var panels = num('panelCount');
+  var watts = num('panelWatts');
+  var invKw = num('invKw');
+  var panelPrice = num('panelPrice');
+  var invPrice = num('invPrice');
+  var battType = $('battType').value;
+  var battKwh = sysType === 'hybrid' ? num('battKwh') : 0;
+  var battPrice = num('battPrice');
+  if (!total || !panels || !watts || !invKw) { showError('Fill in the total price, number of panels, panel size and inverter size first.'); return; }
+
+  var dcW = panels * watts;
+  var dcKw = dcW / 1000;
+  var perW = total / dcW;
+  var ratio = dcKw / invKw;
+
+  // Fair whole-system range (Rs/W), from solarrate.pk 26 Nov 2026: on-grid Rs 78-123/W.
+  var battLow = 0, battHigh = 0;
+  if (sysType === 'hybrid' && battKwh > 0) {
+    battLow = battKwh * 45000 / dcW;
+    battHigh = battKwh * 65000 / dcW;
+  }
+  var expLow = 78 + battLow;
+  var expHigh = 123 + battHigh;
+
+  var verdict, cls, text;
+  if (perW < expLow * 0.9) {
+    verdict = 'SUSPICIOUSLY CHEAP'; cls = 'low';
+    text = 'This quote is well below the usual market range. That can mean lower-grade panels, a no-name inverter, or items left out of the price. Do not pay until the brands, grades and included items are in writing — and get two more quotes to compare.';
+  } else if (perW <= expHigh) {
+    verdict = 'FAIR PRICE'; cls = 'good';
+    text = 'Your total price sits inside the usual market range for a ' + (sysType === 'hybrid' ? 'hybrid' : 'on-grid') + ' system of this size in Pakistan (Rs ' + Math.round(expLow) + '–' + Math.round(expHigh) + ' per watt, checked 26 Nov 2026). Check the findings below before you sign.';
+  } else if (perW <= expHigh * 1.2) {
+    verdict = 'A BIT HIGH'; cls = 'warn';
+    text = 'Your quote is above the usual range (Rs ' + Math.round(expLow) + '–' + Math.round(expHigh) + ' per watt). It may be justified by premium brands or a longer warranty — ask the installer what exactly costs extra, and get a second quote.';
+  } else {
+    verdict = 'HIGH — GET ANOTHER QUOTE'; cls = 'bad';
+    text = 'Your quote is well above the usual range (Rs ' + Math.round(expLow) + '–' + Math.round(expHigh) + ' per watt). Do not sign this one — get at least two more quotes for the same system size and compare them line by line.';
+  }
+
+  var findings = [];
+  // Panel price check
+  if (panelPrice > 0) {
+    var ppw = panelPrice / dcW;
+    if ($('panelBrand').value === 'tier1') {
+      if (ppw >= 38 && ppw <= 45) findings.push({ c: 'ok', t: 'Panels fairly priced — ' + fmt(ppw) + ' / watt', d: 'Tier-1 A-grade panels sell for about Rs 38–45 per watt (Nov 2026). Your panels sit inside that range.' });
+      else if (ppw < 38) findings.push({ c: 'warn', t: 'Panels cheaper than Tier-1 market rate — ' + fmt(ppw) + ' / watt', d: 'Tier-1 panels are Rs 38–45/W. Cheaper panels may be B-grade, older stock or a lesser brand — ask for the grade and documents in writing.' });
+      else findings.push({ c: 'warn', t: 'Panels priced above market — ' + fmt(ppw) + ' / watt', d: 'Tier-1 panels are Rs 38–45/W. Ask why these panels cost more — a premium model or a longer warranty can justify it.' });
+    } else {
+      findings.push({ c: 'warn', t: 'Panels: ' + fmt(ppw) + ' / watt', d: 'Tier-1 A-grade panels are Rs 38–45/W. Lesser-known brands sell cheaper — make sure the brand, model and grade are written on the quotation.' });
+    }
+  } else if ($('panelBrand').value === 'unknown') {
+    findings.push({ c: 'warn', t: 'Panel brand not on the quotation', d: 'Without a brand and model you cannot check the price or the warranty. Ask for it in writing before paying.' });
+  } else if ($('panelBrand').value === 'other') {
+    findings.push({ c: 'ok', t: 'Panels: ' + fmt(total / dcW) + ' / watt for the whole system', d: 'Non Tier-1 brands are usually cheaper than Rs 38–45/W. Check the panel datasheet and warranty terms before judging the price.' });
+  }
+
+  // Inverter price check (pakroz Nov 2026 bands; interpolate between 3/5/10 kW)
+  if (invPrice > 0) {
+    var invBands = [[3, 140000, 210000], [5, 220000, 300000], [10, 350000, 550000]];
+    var lo, hi;
+    if (invKw <= 3) { lo = invBands[0][1] * invKw / 3; hi = invBands[0][2] * invKw / 3; }
+    else if (invKw <= 5) { var f = (invKw - 3) / 2; lo = 140000 + f * 80000; hi = 210000 + f * 90000; }
+    else if (invKw <= 10) { var f2 = (invKw - 5) / 5; lo = 220000 + f2 * 130000; hi = 300000 + f2 * 250000; }
+    else { lo = 35000 * invKw; hi = 55000 * invKw; }
+    if (invPrice >= lo && invPrice <= hi) findings.push({ c: 'ok', t: 'Inverter fairly priced — ' + fmt(invPrice), d: 'A ' + invKw + ' kW hybrid inverter usually costs about ' + fmt(lo) + ' – ' + fmt(hi) + ' (Nov 2026). Yours is inside that range.' });
+    else if (invPrice < lo) findings.push({ c: 'warn', t: 'Inverter cheaper than usual — ' + fmt(invPrice), d: 'A ' + invKw + ' kW hybrid inverter usually costs ' + fmt(lo) + ' – ' + fmt(hi) + '. A much cheaper inverter may be a lesser brand or an older model — check the brand and warranty.' });
+    else findings.push({ c: 'warn', t: 'Inverter priced above market — ' + fmt(invPrice), d: 'A ' + invKw + ' kW hybrid inverter usually costs ' + fmt(lo) + ' – ' + fmt(hi) + '. Ask what makes this one cost more.' });
+  } else if ($('invBrand').value === 'unknown') {
+    findings.push({ c: 'warn', t: 'Inverter brand not on the quotation', d: 'The inverter is the part most likely to fail. Ask for the brand, model and warranty in writing.' });
+  }
+
+  // Panel-to-inverter ratio
+  if (ratio >= 1.0 && ratio <= 1.3) findings.push({ c: 'ok', t: 'Panel-to-inverter ratio is good — ' + ratio.toFixed(2), d: 'Your ' + dcKw.toFixed(2) + ' kW of panels on a ' + invKw + ' kW inverter is in the normal 1.0–1.3 range.' });
+  else if (ratio > 1.3) findings.push({ c: 'warn', t: 'Too many panels for this inverter — ratio ' + ratio.toFixed(2), d: 'Above 1.3 the inverter clips power on sunny days, so some of your panels\' output is wasted. Ask for a bigger inverter or fewer panels.' });
+  else findings.push({ c: 'warn', t: 'Inverter bigger than the panels need — ratio ' + ratio.toFixed(2), d: 'Below 1.0 you paid for inverter capacity your panels cannot fill. A smaller inverter would have cost less.' });
+
+  // Battery
+  var usable = 0, backupHrs = 0;
+  if (sysType === 'hybrid') {
+    if (battType === 'none' || battKwh <= 0) {
+      findings.push({ c: 'warn', t: 'Hybrid system but no battery in the quote', d: 'A hybrid system without a battery gives no backup during load-shedding. Either add a battery or ask why this is quoted as hybrid.' });
+    } else {
+      var dod = battType === 'lithium' ? 0.9 : 0.5;
+      usable = battKwh * dod;
+      backupHrs = usable / 0.8;
+      var bname = battType === 'lithium' ? 'Lithium (LiFePO4)' : 'Tubular lead-acid';
+      findings.push({ c: 'ok', t: 'Battery usable capacity: ' + usable.toFixed(1) + ' kWh from a ' + battKwh + ' kWh ' + bname + ' bank', d: bname + ' gives about ' + Math.round(dod * 100) + '% usable. That runs essential loads (fans, lights, fridge ~800W) for about ' + backupHrs.toFixed(1) + ' hours.' });
+      if (battType === 'tubular') findings.push({ c: 'warn', t: 'Tubular battery: half the label is usable', d: 'Tubular lead-acid only gives about 50% usable capacity and lasts ~1,500 cycles, against 6,000+ for lithium. Per usable kWh it often costs more than lithium.' });
+      if (battPrice > 0) {
+        var perUsable = battPrice / usable;
+        if (battType === 'lithium') {
+          if (perUsable >= 45000 && perUsable <= 65000) findings.push({ c: 'ok', t: 'Battery fairly priced — ' + fmt(perUsable) + ' per usable kWh', d: 'Lithium storage installed costs about Rs 45,000–65,000 per kWh in Pakistan (Nov 2026).' });
+          else if (perUsable < 45000) findings.push({ c: 'warn', t: 'Battery cheap per usable kWh — ' + fmt(perUsable), d: 'Below Rs 45,000 per kWh is unusually cheap for installed lithium. Check the brand, warranty and cycle rating.' });
+          else findings.push({ c: 'warn', t: 'Battery expensive per usable kWh — ' + fmt(perUsable), d: 'Above Rs 65,000 per kWh is high for installed lithium. Ask what is included — premium brand, longer warranty or extra installation work can justify it.' });
+        }
+      }
+    }
+  }
+
+  // Missing details
+  var missing = [];
+  if (!$('ckGrade').checked) missing.push('panel grade (A-grade, documented)');
+  if (!$('ckPanelWarranty').checked) missing.push('panel warranty years');
+  if (!$('ckInvWarranty').checked) missing.push('inverter warranty years');
+  if (!$('ckBattWarranty').checked && sysType === 'hybrid') missing.push('battery warranty / cycle life');
+  if (!$('ckStructure').checked) missing.push('structure / mounting type');
+  if (!$('ckNetBilling').checked) missing.push('net billing application');
+  if (!$('ckProtection').checked) missing.push('earthing, lightning protection and DC breakers');
+  if (!$('ckService').checked) missing.push('after-sales service terms');
+  if (missing.length > 0) findings.push({ c: 'warn', t: 'Missing from your quotation: ' + missing.length + ' item' + (missing.length > 1 ? 's' : ''), d: missing.join('; ') + '. Get these in writing before you pay — if it is not written down, it is not promised.' });
+  else findings.push({ c: 'ok', t: 'Your quotation covers all the key details', d: 'Grade, warranties, structure, net billing, protection and service are all written down. That is a good sign.' });
+
+  // Questions for the installer
+  var qs = [];
+  qs.push('Which exact panel model is this, and is it A-grade with documents?');
+  if (perW < expLow * 0.9 || perW > expHigh) qs.push('Why is this price ' + (perW < expLow ? 'below' : 'above') + ' the usual range of Rs ' + Math.round(expLow) + '–' + Math.round(expHigh) + ' per watt for this system?');
+  if (ratio > 1.3) qs.push('Will the ' + invKw + ' kW inverter clip power from my ' + dcKw.toFixed(2) + ' kW of panels? Should the inverter be bigger?');
+  if (ratio < 1.0) qs.push('Why is the inverter ' + invKw + ' kW when my panels are only ' + dcKw.toFixed(2) + ' kW?');
+  if (sysType === 'hybrid' && battKwh > 0) qs.push('How many backup hours will the ' + usable.toFixed(1) + ' kWh usable battery give my essential loads?');
+  if (sysType === 'hybrid' && battType === 'tubular') qs.push('Why tubular lead-acid instead of lithium, given lithium gives 90% usable capacity and 6,000+ cycles?');
+  if (missing.length > 0) qs.push('Can you add the missing items (' + missing.join(', ') + ') to the quotation in writing?');
+  qs.push('Is the net billing (green meter) application included, and who files it?');
+  qs.push('What is included in installation — structure, wiring, breakers, earthing?');
+
+  lastResult = { sysType: sysType, total: total, dcKw: dcKw, perW: perW, expLow: expLow, expHigh: expHigh, ratio: ratio, verdict: verdict, usable: usable, findings: findings, qs: qs };
+
+  var vb = $('verdictBig');
+  vb.textContent = verdict;
+  vb.className = 'big ' + cls;
+  $('verdictText').textContent = text;
+  $('totDc').textContent = dcKw.toFixed(2) + ' kW';
+  $('totPerW').textContent = fmt(perW) + ' / W';
+  $('totRange').textContent = fmt(expLow) + ' – ' + fmt(expHigh) + ' / W';
+  $('totRatio').textContent = ratio.toFixed(2);
+  if (sysType === 'hybrid' && usable > 0) {
+    $('battStat').style.display = 'block';
+    $('totBatt').textContent = usable.toFixed(1) + ' kWh usable';
+  } else { $('battStat').style.display = 'none'; }
+
+  var fl = $('findings');
+  fl.innerHTML = '';
+  findings.forEach(function (f) { addFinding(fl, f.c, f.t, f.d); });
+
+  var ql = $('qlist');
+  ql.innerHTML = '';
+  qs.forEach(function (q) {
+    var li = document.createElement('li');
+    li.textContent = q;
+    ql.appendChild(li);
+  });
+
+  $('resultNote').textContent = 'Benchmarks checked 26 November 2026 (solarrate.pk, pakroz.com, zell.pk, solarcitizen.com.pk, enontraders.com). Prices change weekly — confirm the current rate on the day you pay. A price alone never proves a quote is a scam; always compare two or three quotes for the same system.';
+  $('results').style.display = 'block';
+  $('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+$('calcBtn').addEventListener('click', calc);
+$('copyBtn').addEventListener('click', function () {
+  if (!lastResult) return;
+  var r = lastResult;
+  var lines = ['My solar quote check — Solar Quote Checker Pakistan'];
+  lines.push('System: ' + r.dcKw.toFixed(2) + ' kW ' + (r.sysType === 'hybrid' ? 'hybrid' : 'on-grid'));
+  lines.push('Quoted price: ' + fmt(r.total) + ' (' + fmt(r.perW) + ' per watt)');
+  lines.push('Fair range: ' + fmt(r.expLow) + ' – ' + fmt(r.expHigh) + ' per watt');
+  lines.push('Verdict: ' + r.verdict);
+  lines.push('Panel-to-inverter ratio: ' + r.ratio.toFixed(2));
+  if (r.usable > 0) lines.push('Battery usable: ' + r.usable.toFixed(1) + ' kWh');
+  lines.push('Findings:');
+  r.findings.forEach(function (f) { lines.push('- ' + f.t + ' — ' + f.d); });
+  lines.push('Made with: https://tool.maliksubhan.top/solar-quote-checker/');
+  var text = lines.join('\n');
+  var btn = $('copyBtn');
+  function done() { btn.textContent = 'Copied!'; setTimeout(function () { btn.textContent = 'Copy my quote check'; }, 1500); }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done).catch(function () { window.prompt('Copy your quote check:', text); });
+  } else { window.prompt('Copy your quote check:', text); }
+});
+</script>
+</body>
+</html>
