@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BD70WD6GVM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BD70WD6GVM');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Power Station Calculator — How Long Will It Run?</title>
+<meta name="description" content="How long will a portable power station run your fridge, TV and laptop? Pick your appliances, enter the battery size, and get the runtime, surge check, solar charging time and a side-by-side station comparison. Free, no sign-up.">
+<meta name="keywords" content="power station calculator, portable power station runtime calculator, how long will a power station run a fridge, power station watt calculator, solar generator calculator, power station comparison, portable power station surge watts">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Power Station Calculator — How Long Will It Run?">
+<meta property="og:description" content="Pick your fridge, TV, laptop and lights, enter your power station's battery size, and see how many hours it will run them — plus the surge check, solar charging time and a station comparison. Free, no sign-up.">
+<meta property="og:url" content="https://tool.maliksubhan.top/power-station-calculator/">
+<meta property="og:image" content="https://tool.maliksubhan.top/og-power-station.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Power Station Calculator — How Long Will It Run?">
+<meta name="twitter:description" content="How long will your power station run your fridge, TV and laptop? Pick your appliances and find out in seconds. Free, no sign-up.">
+<meta name="twitter:image" content="https://tool.maliksubhan.top/og-power-station.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Power Station Calculator","url":"https://tool.maliksubhan.top/power-station-calculator/","description":"Calculate how long a portable power station runs your appliances: pick fridge, TV, laptop, fan and lights, enter the battery size in watt-hours, and get estimated runtime, a startup surge check, solar charging time and a side-by-side comparison of two stations. Free, no sign-up.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, Helvetica, sans-serif; background: #f4f6f8; color: #1a1a1a; line-height: 1.6; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 24px 16px 48px; }
+  .crumbs { font-size: 13px; color: #888; margin-bottom: 8px; }
+  .crumbs a { color: #888; }
+  header { text-align: center; padding: 28px 0 4px; }
+  header h1 { font-size: 30px; line-height: 1.25; }
+  header h1 span { color: #0f766e; }
+  header p { color: #555; margin-top: 8px; font-size: 16px; max-width: 660px; margin-left: auto; margin-right: auto; }
+  .hero { width: 100%; max-width: 720px; border-radius: 12px; margin: 18px auto 0; display: block; border: 1px solid #e2e2e2; }
+  .card { background: #fff; border: 1px solid #e2e2e2; border-radius: 12px; padding: 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-top: 24px; }
+  .card h2 { font-size: 20px; margin-bottom: 6px; }
+  .card h2 span { color: #0f766e; }
+  .card p { color: #555; font-size: 14px; }
+  .field { margin-top: 14px; }
+  .field label { display: block; font-size: 13px; font-weight: bold; color: #444; margin-bottom: 6px; }
+  .field input, .field select { padding: 11px 12px; font-size: 16px; border: 2px solid #ccc; border-radius: 8px; font-family: Arial, Helvetica, sans-serif; background: #fff; }
+  .field input:focus, .field select:focus { border-color: #0f766e; outline: none; }
+  .field input[type=number] { width: 160px; }
+  .field select { max-width: 100%; }
+  .grid { display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-end; }
+  .hint { font-size: 13px; color: #888; margin-top: 4px; }
+  .seg { display: flex; gap: 8px; flex-wrap: wrap; }
+  .seg button { border: 2px solid #ccc; background: #fff; border-radius: 8px; padding: 10px 18px; font-size: 15px; cursor: pointer; font-family: Arial, Helvetica, sans-serif; }
+  .seg button.on { background: #0f766e; color: #fff; border-color: #0f766e; font-weight: bold; }
+  .btn { background: #0f766e; color: #fff; border: none; border-radius: 8px; padding: 12px 22px; font-size: 15px; font-weight: bold; cursor: pointer; }
+  .btn:hover { background: #0b5e57; }
+  .btn-light { background: #eee; color: #1a1a1a; }
+  .btn-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+  input[type=range] { width: 100%; max-width: 420px; accent-color: #0f766e; }
+  .slideval { font-size: 24px; font-weight: bold; }
+  .slideval small { font-size: 14px; color: #666; font-weight: normal; }
+  .appgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin-top: 16px; }
+  .app { border: 2px solid #e2e2e2; border-radius: 12px; padding: 10px; cursor: pointer; text-align: center; background: #fff; }
+  .app img { width: 100%; height: 96px; object-fit: cover; border-radius: 8px; display: block; }
+  .app .nm { font-weight: bold; font-size: 14px; margin-top: 8px; }
+  .app .w { font-size: 13px; color: #666; }
+  .app .qty { display: none; margin-top: 8px; align-items: center; justify-content: center; gap: 10px; }
+  .app .qty button { width: 30px; height: 30px; border-radius: 50%; border: 2px solid #0f766e; background: #fff; color: #0f766e; font-size: 18px; font-weight: bold; cursor: pointer; line-height: 1; }
+  .app .qty b { font-size: 16px; }
+  .app.on { border-color: #0f766e; background: #f0fdfa; }
+  .app.on .qty { display: flex; }
+  .loadlist { margin-top: 16px; }
+  .loadrow { display: flex; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px solid #eee; font-size: 15px; }
+  .loadrow:last-child { border-bottom: none; }
+  .loadrow .nm { flex: 1; }
+  .loadrow .w { color: #666; font-size: 13px; }
+  .loadrow button { width: 28px; height: 28px; border-radius: 50%; border: 2px solid #0f766e; background: #fff; color: #0f766e; font-weight: bold; cursor: pointer; line-height: 1; }
+  .loadrow .x { border-color: #ccc; color: #888; }
+  .verdict { text-align: center; padding: 20px 10px 8px; }
+  .verdict .big { font-size: 38px; font-weight: bold; }
+  .verdict .big.good { color: #0a7d5c; }
+  .verdict .big.warn { color: #b7791f; }
+  .verdict .big.bad { color: #b3261e; }
+  .verdict p { color: #444; font-size: 15px; margin-top: 6px; }
+  .totals { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+  .totals .stat { flex: 1 1 140px; background: #f4f6f8; border-radius: 10px; padding: 14px 10px; text-align: center; }
+  .totals .num { font-size: 24px; font-weight: bold; }
+  .totals .num.green { color: #0a7d5c; }
+  .totals .num.red { color: #b3261e; }
+  .totals .num.amber { color: #b7791f; }
+  .totals .lbl { font-size: 13px; color: #666; margin-top: 2px; }
+  .findings { margin-top: 16px; }
+  .finding { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px solid #eee; align-items: baseline; }
+  .finding:last-child { border-bottom: none; }
+  .finding .dot { font-size: 18px; line-height: 1; min-width: 22px; text-align: center; }
+  .finding .dot.ok { color: #0a7d5c; }
+  .finding .dot.warn { color: #b7791f; }
+  .finding .dot.bad { color: #b3261e; }
+  .finding .t { font-weight: bold; }
+  .finding .d { color: #555; font-size: 14px; }
+  .note { margin-top: 12px; font-size: 13px; color: #777; }
+  .solarimg { width: 100%; max-width: 520px; border-radius: 12px; display: block; margin: 14px 0 4px; border: 1px solid #e2e2e2; }
+  .cmptable { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 14px; }
+  .cmptable th, .cmptable td { border: 1px solid #e2e2e2; padding: 8px 10px; text-align: center; }
+  .cmptable th { background: #f4f6f8; }
+  .cmptable td:first-child, .cmptable th:first-child { text-align: left; }
+  .cmpcols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 12px; }
+  @media (max-width: 600px) { .cmpcols { grid-template-columns: 1fr; } }
+  .cmpbox { border: 2px solid #e2e2e2; border-radius: 12px; padding: 16px; }
+  .cmpbox.win { border-color: #0a7d5c; background: #f0fdf4; }
+  .cmpbox h3 { font-size: 16px; margin-bottom: 8px; }
+  .cmpbox .big { font-size: 26px; font-weight: bold; }
+  section.info h2 { font-size: 20px; margin-bottom: 8px; }
+  section.info ol, section.info ul { margin-left: 20px; color: #444; }
+  section.info li { margin-bottom: 6px; }
+  .faq h3 { font-size: 16px; margin-top: 14px; }
+  .faq p { color: #444; }
+  .src { font-size: 13px; color: #777; }
+  .src a { color: #777; }
+  table.bench { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; }
+  table.bench th, table.bench td { border: 1px solid #e2e2e2; padding: 8px 10px; text-align: left; }
+  table.bench th { background: #f4f6f8; }
+  footer { text-align: center; color: #888; font-size: 13px; margin-top: 40px; }
+  footer a { color: #888; }
+  .tags { text-align: center; color: #888; font-size: 13px; margin-top: 12px; }
+  #results { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="crumbs"><a href="/">← All free tools</a></p>
+  <header>
+    <h1>🔋 <span>Power Station Calculator</span> — How Long Will It Run?</h1>
+    <p><b>Bought a portable power station and wondering what it can actually run?</b> Pick your fridge, TV, laptop and lights, enter the battery size, and see how many hours it lasts — plus whether it can handle the startup surge, how fast solar recharges it, and which of two stations is the better buy.</p>
+    <img class="hero" src="images/hero.png" alt="Portable power station at a campsite">
+  </header>
+
+  <div class="card">
+    <h2>1. Your <span>power station</span></h2>
+    <p>Enter the numbers from the spec sheet — they are printed on the box or the product page. The defaults are a typical 1,000 Wh station.</p>
+    <div class="field">
+      <label for="cap">Battery capacity (watt-hours)</label>
+      <div class="slideval"><span id="capVal">1,000</span> <small>Wh</small></div>
+      <input type="range" id="cap" min="250" max="5000" step="50" value="1000">
+      <p class="hint">250 Wh — small camping unit &nbsp;·&nbsp; 1,000 Wh — home backup &nbsp;·&nbsp; 2,000+ Wh — whole-room backup</p>
+    </div>
+    <div class="grid">
+      <div class="field">
+        <label for="usable">Usable battery (%)</label>
+        <input type="number" id="usable" value="85" min="50" max="100">
+        <p class="hint">Most stations deliver 85–90% of the rated Wh. Leave 85 unless your manual says otherwise.</p>
+      </div>
+      <div class="field">
+        <label for="eff">Inverter efficiency (%)</label>
+        <input type="number" id="eff" value="88" min="70" max="98">
+        <p class="hint">About 88% for AC outlets. DC/USB loads run nearer 95% — raise it if everything is USB.</p>
+      </div>
+      <div class="field">
+        <label for="idle">Inverter idle draw (W)</label>
+        <input type="number" id="idle" value="10" min="0" max="30">
+        <p class="hint">Power the station burns just by keeping the AC inverter on — usually 5–20 W.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="field">
+        <label for="cont">Continuous output (W)</label>
+        <input type="number" id="cont" value="1500" min="100" max="5000" step="50">
+        <p class="hint">The most it can run non-stop. A 1,000 Wh station is often 1,500 W.</p>
+      </div>
+      <div class="field">
+        <label for="surge">Surge / peak output (W)</label>
+        <input type="number" id="surge" value="3000" min="100" max="10000" step="50">
+        <p class="hint">The short burst for starting motors — usually about double the continuous rating.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>2. Your <span>appliances</span></h2>
+    <p>Tap the things you want to run at the same time. Wattages are typical values — check the label on your own appliance when you can. Fridges and freezers cycle on and off, so the calculator uses their <b>average</b> draw for runtime and their full running watts for the output check.</p>
+    <div class="appgrid" id="appGrid"></div>
+    <div class="field">
+      <label for="moreSel">More appliances</label>
+      <div class="grid">
+        <select id="moreSel">
+          <option value="">Choose an appliance…</option>
+        </select>
+        <button class="btn" type="button" id="addMore">+ Add</button>
+      </div>
+    </div>
+    <div class="loadlist" id="loadList"></div>
+    <p class="note" id="loadNote">No appliances picked yet — tap one above to start.</p>
+  </div>
+
+  <div class="card" id="results">
+    <h2>Your <span>result</span></h2>
+    <div class="verdict">
+      <div class="big good" id="bigTime">—</div>
+      <p id="bigSub"></p>
+    </div>
+    <div class="totals">
+      <div class="stat"><div class="num" id="stLoad">—</div><div class="lbl">Average load (W)</div></div>
+      <div class="stat"><div class="num" id="stUsable">—</div><div class="lbl">Usable energy (Wh)</div></div>
+      <div class="stat"><div class="num" id="stDraw">—</div><div class="lbl">Draw from battery (W)</div></div>
+      <div class="stat"><div class="num" id="stPeak">—</div><div class="lbl">Start-up peak (W)</div></div>
+    </div>
+    <div class="findings" id="findings"></div>
+    <h2 style="margin-top:22px">Each appliance <span>on its own</span></h2>
+    <p>How long the station runs just that one thing, alone:</p>
+    <table class="bench" id="aloneTable">
+      <tr><th>Appliance</th><th>Watts</th><th>Runtime alone</th></tr>
+    </table>
+    <div class="btn-row">
+      <button class="btn" type="button" id="copyBtn">Copy my result</button>
+      <button class="btn btn-light" type="button" id="resetBtn">Reset calculator</button>
+    </div>
+    <p class="note" id="copyNote"></p>
+  </div>
+
+  <div class="card">
+    <h2>3. <span>Solar charging</span> — how fast does it recharge?</h2>
+    <p>Plug a solar panel into the station and it recharges from the sun. Enter the panel size and your peak sun hours to see how long a full charge takes.</p>
+    <img class="solarimg" src="images/solar.png" alt="Portable solar panel charging a power station">
+    <div class="grid">
+      <div class="field">
+        <label for="panelW">Solar panel watts (W)</label>
+        <input type="number" id="panelW" value="200" min="20" max="2000" step="10">
+        <p class="hint">One 200 W portable panel is the common camping size.</p>
+      </div>
+      <div class="field">
+        <label for="sunH">Peak sun hours per day</label>
+        <input type="number" id="sunH" value="4" min="1" max="8" step="0.5">
+        <p class="hint">Typical: US 4–5, Canada 3–4, UK 2.5–3. Set it from the country picker below.</p>
+      </div>
+    </div>
+    <div class="totals">
+      <div class="stat"><div class="num" id="solHours">—</div><div class="lbl">Hours of full sun to charge</div></div>
+      <div class="stat"><div class="num" id="solDays">—</div><div class="lbl">Days at your sun hours</div></div>
+    </div>
+    <p class="note">Charging uses 75% panel efficiency — panels rarely give their full rated watts, and clouds, angle and heat all cut output. Real charging is usually a little slower than this.</p>
+  </div>
+
+  <div class="card">
+    <h2>4. Compare <span>two stations</span></h2>
+    <p>Thinking between two models? Enter both and see which one runs <b>your</b> appliances longer — and which one can actually start them.</p>
+    <div class="cmpcols">
+      <div class="cmpbox" id="cmpA">
+        <h3>Station A</h3>
+        <div class="field"><label for="aCap">Battery (Wh)</label><input type="number" id="aCap" value="1000" min="100" max="10000" step="50"></div>
+        <div class="field"><label for="aCont">Continuous output (W)</label><input type="number" id="aCont" value="1500" min="100" max="5000" step="50"></div>
+        <div class="field"><label for="aSurge">Surge output (W)</label><input type="number" id="aSurge" value="3000" min="100" max="10000" step="50"></div>
+        <p style="margin-top:12px">Runtime for your load: <span class="big" id="aTime">—</span></p>
+        <p class="note" id="aNote"></p>
+      </div>
+      <div class="cmpbox" id="cmpB">
+        <h3>Station B</h3>
+        <div class="field"><label for="bCap">Battery (Wh)</label><input type="number" id="bCap" value="2000" min="100" max="10000" step="50"></div>
+        <div class="field"><label for="bCont">Continuous output (W)</label><input type="number" id="bCont" value="2200" min="100" max="5000" step="50"></div>
+        <div class="field"><label for="bSurge">Surge output (W)</label><input type="number" id="bSurge" value="4400" min="100" max="10000" step="50"></div>
+        <p style="margin-top:12px">Runtime for your load: <span class="big" id="bTime">—</span></p>
+        <p class="note" id="bNote"></p>
+      </div>
+    </div>
+    <p class="note" id="cmpVerdict" style="margin-top:14px"></p>
+  </div>
+
+  <div class="card">
+    <h2>5. Your <span>country</span> — voltage &amp; sun</h2>
+    <p>US and Canadian outlets run on 120 V; UK outlets run on 230 V. A power station bought in one country usually cannot just be plugged into the other's wall sockets — check the outlets and the plug type before you buy.</p>
+    <div class="seg" id="countrySeg" style="margin-top:12px">
+      <button type="button" data-c="us" class="on">United States</button>
+      <button type="button" data-c="uk">United Kingdom</button>
+      <button type="button" data-c="ca">Canada</button>
+    </div>
+    <p class="note" id="countryNote" style="margin-top:12px"></p>
+  </div>
+
+  <div class="card">
+    <section class="info">
+      <h2>How the calculator works</h2>
+      <ol>
+        <li><b>Usable energy</b> = battery Wh × usable %. A 1,000 Wh station at 85% gives you 850 Wh to actually use.</li>
+        <li><b>Draw from the battery</b> = your load ÷ inverter efficiency + idle draw. The inverter loses about 12% turning battery power into wall power.</li>
+        <li><b>Runtime</b> = usable energy ÷ draw. That is the whole formula — the same one EcoFlow, Jackery and Bluetti guides use.</li>
+        <li><b>Fridges and freezers</b> use their average draw for runtime (they cycle on and off — a full-size fridge averages about 60 W even though the compressor draws 150 W while running), but the output and surge checks use the full running and starting watts.</li>
+        <li><b>Start-up peak</b> = all running watts together + the single biggest starting surge. If that peak is above the station's surge rating, the station may shut off when a motor starts — start big appliances one at a time.</li>
+        <li><b>Solar charging</b> = battery Wh ÷ (panel watts × 75%). A 200 W panel gives about 150 W of real charging power in good sun.</li>
+      </ol>
+    </section>
+  </div>
+
+  <div class="card">
+    <section class="info faq">
+      <h2>Common questions</h2>
+      <h3>How long will a 1,000 Wh power station run a refrigerator?</h3>
+      <p>About 11 hours on the fridge alone — a full-size fridge averages around 60 W, so 850 usable Wh ÷ (60 ÷ 0.88 + 10 idle) ≈ 11 hours. Add a TV and lights and it drops to roughly 3–4 hours.</p>
+      <h3>Why is the runtime shorter than Wh ÷ watts?</h3>
+      <p>Three things eat into it: you cannot use 100% of the battery, the inverter loses ~12% as heat, and the inverter itself burns 5–20 W just staying on. That is why a 1,000 Wh station gives about 850 Wh of usable energy, not 1,000.</p>
+      <h3>Can a power station run a microwave or kettle?</h3>
+      <p>Only if its continuous output is high enough — a microwave draws about 1,500 W and a kettle the same. Most 1,000 Wh stations (1,500 W output) can run one of them, but not both at once, and only for a short time: 850 Wh ÷ 1,500 W is about half an hour.</p>
+      <h3>What does surge power mean?</h3>
+      <p>Motors and compressors need a short burst of extra power to start — a fridge needs about 600 W for a few seconds even though it runs on 150 W. If the burst is bigger than the station's surge rating, the station trips. That is the number people forget to check.</p>
+      <h3>How long does solar take to recharge it?</h3>
+      <p>A 1,000 Wh station with a 200 W panel needs about 6.7 hours of full sun (1,000 ÷ 150). At 4 peak sun hours a day that is about 1.7 days. Bigger panels or two panels in parallel cut the time.</p>
+    </section>
+  </div>
+
+  <div class="card">
+    <section class="info">
+      <h2>Typical appliance watts</h2>
+      <p>These are the values this calculator uses. Real models differ — the rating plate on your appliance is always the better guide.</p>
+      <table class="bench">
+        <tr><th>Appliance</th><th>Running W</th><th>Average W</th><th>Starting W</th></tr>
+        <tr><td>Refrigerator (full-size)</td><td>150</td><td>60</td><td>600</td></tr>
+        <tr><td>Chest freezer</td><td>100</td><td>40</td><td>400</td></tr>
+        <tr><td>LED TV 55"</td><td>100</td><td>100</td><td>100</td></tr>
+        <tr><td>Laptop</td><td>60</td><td>60</td><td>60</td></tr>
+        <tr><td>Fan (pedestal)</td><td>50</td><td>50</td><td>50</td></tr>
+        <tr><td>LED light bulb</td><td>9</td><td>9</td><td>9</td></tr>
+        <tr><td>Microwave (1,000 W cooking)</td><td>1,500</td><td>1,500</td><td>1,500</td></tr>
+        <tr><td>CPAP machine</td><td>40</td><td>40</td><td>40</td></tr>
+        <tr><td>Wi-Fi router</td><td>15</td><td>15</td><td>15</td></tr>
+        <tr><td>Phone charger</td><td>10</td><td>10</td><td>10</td></tr>
+        <tr><td>Desktop PC + monitor</td><td>200</td><td>200</td><td>200</td></tr>
+        <tr><td>Game console</td><td>150</td><td>150</td><td>150</td></tr>
+        <tr><td>Electric kettle</td><td>1,500</td><td>1,500</td><td>1,500</td></tr>
+        <tr><td>Space heater</td><td>1,500</td><td>1,500</td><td>1,500</td></tr>
+        <tr><td>Coffee maker</td><td>900</td><td>900</td><td>900</td></tr>
+        <tr><td>Washing machine (cold wash)</td><td>500</td><td>500</td><td>1,000</td></tr>
+      </table>
+      <p class="src" style="margin-top:12px">Sources: typical values compiled from published appliance wattage tables — <a href="https://powerstationwatts.com/appliances/">powerstationwatts.com</a>, <a href="https://www.electrocalculators.com/appliance-wattage">electrocalculators.com</a>, <a href="https://homebuildlab.com/tools/generator-wattage-calculator">homebuildlab.com generator wattage chart</a>; runtime formula and efficiency figures from <a href="https://oukitelpower.com/blogs/blog/portable-power-station-calculator">Oukitel's power station calculator guide</a> and <a href="https://offgridsizer.com/power-station-runtime-calculator/">offgridsizer.com</a>. Figures are planning estimates, not a guarantee — check your appliance labels.</p>
+    </section>
+  </div>
+
+  <footer><a href="/">← All free tools</a> · Free tools by Malik Subhan · maliksubhan.top</footer>
+  <p class="tags">#PowerStation #PowerStationCalculator #PortablePowerStation #SolarGenerator #CampingGear #HomeBackup #PowerOutage</p>
+</div>
+
+<script>
+const APPS = [
+  {id:'fridge', name:'Refrigerator', img:'images/fridge.png', run:150, avg:60, surge:600, sub:'150 W running · 60 W average'},
+  {id:'tv', name:'LED TV 55"', img:'images/tv.png', run:100, avg:100, surge:100, sub:'100 W'},
+  {id:'laptop', name:'Laptop', img:'images/laptop.png', run:60, avg:60, surge:60, sub:'60 W'},
+  {id:'fan', name:'Fan (pedestal)', img:'images/fan.png', run:50, avg:50, surge:50, sub:'50 W'},
+  {id:'light', name:'LED light bulb', img:'images/light.png', run:9, avg:9, surge:9, sub:'9 W per bulb'},
+  {id:'microwave', name:'Microwave', img:'images/microwave.png', run:1500, avg:1500, surge:1500, sub:'1,500 W draw'}
+];
+const MORE = [
+  {id:'freezer', name:'Chest freezer', run:100, avg:40, surge:400, sub:'100 W running · 40 W average'},
+  {id:'cpap', name:'CPAP machine', run:40, avg:40, surge:40, sub:'40 W'},
+  {id:'router', name:'Wi-Fi router', run:15, avg:15, surge:15, sub:'15 W'},
+  {id:'phone', name:'Phone charger', run:10, avg:10, surge:10, sub:'10 W'},
+  {id:'pc', name:'Desktop PC + monitor', run:200, avg:200, surge:200, sub:'200 W'},
+  {id:'console', name:'Game console', run:150, avg:150, surge:150, sub:'150 W'},
+  {id:'kettle', name:'Electric kettle', run:1500, avg:1500, surge:1500, sub:'1,500 W'},
+  {id:'heater', name:'Space heater', run:1500, avg:1500, surge:1500, sub:'1,500 W'},
+  {id:'coffee', name:'Coffee maker', run:900, avg:900, surge:900, sub:'900 W'},
+  {id:'washer', name:'Washing machine (cold)', run:500, avg:500, surge:1000, sub:'500 W running · 1,000 W start'}
+];
+const ALL = {};
+APPS.concat(MORE).forEach(a => ALL[a.id] = a);
+const sel = {fridge:1, tv:1, laptop:1, light:2};
+let country = 'us';
+const SUN = {us:4.5, uk:2.7, ca:3.5};
+const CNOTE = {
+  us: 'United States — 120 V outlets, Type A/B plugs. Good sun for solar charging: about 4–5 peak sun hours a day in most states.',
+  uk: 'United Kingdom — 230 V outlets, Type G plugs. A US 120 V station will not run UK appliances without a step-up transformer — buy a UK-spec station. Sun is weaker: about 2.5–3 peak sun hours a day.',
+  ca: 'Canada — 120 V outlets, Type A/B plugs, same as the US. Winter backup is the big use case. About 3–4 peak sun hours a day in summer, much less in winter.'
+};
+
+function $(id){ return document.getElementById(id); }
+function num(id, d){ const v = parseFloat($(id).value); return isFinite(v) ? v : d; }
+function fmtH(h){
+  if(!isFinite(h) || h <= 0) return '—';
+  if(h < 1){ return Math.round(h*60) + ' min'; }
+  if(h >= 48){ return (h/24).toFixed(1) + ' days'; }
+  const hh = Math.floor(h), mm = Math.round((h-hh)*60);
+  return hh + ' h ' + (mm<10?'0':'') + mm + ' min';
+}
+function buildGrid(){
+  $('appGrid').innerHTML = APPS.map(a =>
+    '<div class="app' + (sel[a.id] ? ' on' : '') + '" data-id="' + a.id + '">' +
+    '<img src="' + a.img + '" alt="' + a.name + '">' +
+    '<div class="nm">' + a.name + '</div><div class="w">' + a.sub + '</div>' +
+    '<div class="qty"><button type="button" data-act="minus">−</button><b>' + (sel[a.id]||0) + '</b><button type="button" data-act="plus">+</button></div>' +
+    '</div>').join('');
+  $('moreSel').innerHTML = '<option value="">Choose an appliance…</option>' + MORE.map(a =>
+    '<option value="' + a.id + '">' + a.name + ' — ' + a.sub + '</option>').join('');
+}
+function buildLoad(){
+  const ids = Object.keys(sel);
+  if(!ids.length){ $('loadList').innerHTML=''; $('loadNote').textContent='No appliances picked yet — tap one above to start.'; return; }
+  $('loadNote').textContent='';
+  $('loadList').innerHTML = ids.map(id => {
+    const a = ALL[id];
+    return '<div class="loadrow"><span class="nm">' + a.name + ' <span class="w">(' + a.sub + ')</span></span>' +
+      '<button type="button" data-id="' + id + '" data-act="minus">−</button><b>' + sel[id] + '</b>' +
+      '<button type="button" data-id="' + id + '" data-act="plus">+</button>' +
+      '<button type="button" class="x" data-id="' + id + '" data-act="remove">✕</button></div>';
+  }).join('');
+}
+function totals(){
+  let avg=0, run=0, peakExtra=0;
+  Object.keys(sel).forEach(id => {
+    const a = ALL[id], q = sel[id];
+    avg += a.avg*q; run += a.run*q;
+    peakExtra = Math.max(peakExtra, a.surge - a.run);
+  });
+  return {avg:avg, run:run, peak: run + peakExtra};
+}
+function calc(){
+  const cap = num('cap', 1000);
+  $('capVal').textContent = cap.toLocaleString('en-US');
+  const usable = cap * num('usable', 85)/100;
+  const eff = num('eff', 88)/100;
+  const idle = num('idle', 10);
+  const cont = num('cont', 1500);
+  const surge = num('surge', 3000);
+  const t = totals();
+  const hasLoad = t.avg > 0;
+  $('results').style.display = hasLoad ? 'block' : 'none';
+  buildLoad();
+  if(!hasLoad){ calcSolar(cap); calcCompare(t); return; }
+  const draw = t.avg/eff + idle;
+  const hours = usable/draw;
+  const big = $('bigTime');
+  big.textContent = fmtH(hours);
+  big.className = 'big ' + (hours >= 8 ? 'good' : hours >= 3 ? 'warn' : 'bad');
+  $('bigSub').textContent = hours >= 24
+    ? 'Your station runs everything for about ' + (hours/24).toFixed(1) + ' days.'
+    : hours >= 8 ? 'A full night of backup — comfortable.'
+    : hours >= 3 ? 'A few hours of backup — enough for the essentials.'
+    : 'Less than 3 hours — drop a heavy appliance or get a bigger station.';
+  $('stLoad').textContent = Math.round(t.avg) + ' W';
+  $('stUsable').textContent = Math.round(usable).toLocaleString('en-US') + ' Wh';
+  $('stDraw').textContent = Math.round(draw) + ' W';
+  $('stPeak').textContent = t.peak.toLocaleString('en-US') + ' W';
+  const f = [];
+  if(t.run <= cont){
+    f.push({c:'ok', t:'Output OK', d:'Your ' + t.run.toLocaleString('en-US') + ' W load fits under the ' + cont.toLocaleString('en-US') + ' W continuous output (' + Math.round(t.run/cont*100) + '% used).'});
+  } else {
+    f.push({c:'bad', t:'Too much load', d:'Your ' + t.run.toLocaleString('en-US') + ' W load is over the ' + cont.toLocaleString('en-US') + ' W continuous output — this station cannot run everything at once. Remove a heavy appliance.'});
+  }
+  if(t.peak <= surge){
+    f.push({c:'ok', t:'Surge OK', d:'Start-up peak ' + t.peak.toLocaleString('en-US') + ' W is under the ' + surge.toLocaleString('en-US') + ' W surge rating — motors can start.'});
+  } else {
+    f.push({c:'warn', t:'Surge may trip it', d:'Start-up peak ' + t.peak.toLocaleString('en-US') + ' W is over the ' + surge.toLocaleString('en-US') + ' W surge rating. Start big appliances one at a time, or pick a station with a higher surge rating.'});
+  }
+  if(t.avg <= 100){
+    f.push({c:'ok', t:'Light load', d:'This is a light load — the station will last a long time. You could add more appliances.'});
+  }
+  $('findings').innerHTML = f.map(x =>
+    '<div class="finding"><span class="dot ' + x.c + '">' + (x.c==='ok'?'●':x.c==='warn'?'▲':'✕') + '</span><div><div class="t">' + x.t + '</div><div class="d">' + x.d + '</div></div></div>').join('');
+  const rows = Object.keys(sel).map(id => {
+    const a = ALL[id];
+    const h = usable/(a.avg/eff + idle);
+    return '<tr><td>' + a.name + (sel[id]>1 ? ' ×' + sel[id] : '') + '</td><td>' + a.avg + ' W avg</td><td>' + fmtH(h) + '</td></tr>';
+  }).join('');
+  $('aloneTable').innerHTML = '<tr><th>Appliance</th><th>Watts</th><th>Runtime alone</th></tr>' + rows;
+  calcSolar(cap);
+  calcCompare(t);
+}
+function calcSolar(cap){
+  const panel = num('panelW', 200);
+  const sun = num('sunH', 4);
+  if(panel <= 0 || sun <= 0){ $('solHours').textContent='—'; $('solDays').textContent='—'; return; }
+  const sunHours = cap/(panel*0.75);
+  $('solHours').textContent = sunHours.toFixed(1) + ' h';
+  $('solDays').textContent = (sunHours/sun).toFixed(1) + ' days';
+}
+function stationRuntime(capWh, t){
+  const usable = capWh * num('usable', 85)/100;
+  const eff = num('eff', 88)/100;
+  const idle = num('idle', 10);
+  if(t.avg <= 0) return null;
+  return usable/(t.avg/eff + idle);
+}
+function calcCompare(t){
+  const aH = stationRuntime(num('aCap',1000), t);
+  const bH = stationRuntime(num('bCap',2000), t);
+  $('aTime').textContent = aH===null ? '—' : fmtH(aH);
+  $('bTime').textContent = bH===null ? '—' : fmtH(bH);
+  const aOK = t.run <= num('aCont',1500) && t.peak <= num('aSurge',3000);
+  const bOK = t.run <= num('bCont',2200) && t.peak <= num('bSurge',4400);
+  $('aNote').textContent = t.avg<=0 ? '' : (aOK ? 'Can run your load.' : 'Cannot run your full load — output or surge too low.');
+  $('bNote').textContent = t.avg<=0 ? '' : (bOK ? 'Can run your load.' : 'Cannot run your full load — output or surge too low.');
+  $('cmpA').classList.toggle('win', aH!==null && bH!==null && aH>bH);
+  $('cmpB').classList.toggle('win', aH!==null && bH!==null && bH>aH);
+  $('cmpVerdict').textContent = (aH===null || bH===null) ? '' :
+    (aH===bH ? 'Both stations last the same time for your load — pick the cheaper one, or the one with the higher surge rating.' :
+    (aH>bH ? 'Station A lasts about ' + ((aH-bH)).toFixed(1) + ' hours longer for your load.' :
+             'Station B lasts about ' + ((bH-aH)).toFixed(1) + ' hours longer for your load.'));
+}
+function setCountry(c){
+  country = c;
+  document.querySelectorAll('#countrySeg button').forEach(b => b.classList.toggle('on', b.dataset.c===c));
+  $('countryNote').textContent = CNOTE[c];
+  $('sunH').value = SUN[c];
+  calc();
+}
+document.querySelectorAll('#countrySeg button').forEach(b => b.addEventListener('click', () => setCountry(b.dataset.c)));
+$('appGrid').addEventListener('click', e => {
+  const card = e.target.closest('.app');
+  if(!card) return;
+  const id = card.dataset.id;
+  const act = e.target.dataset ? e.target.dataset.act : null;
+  if(act === 'plus'){ sel[id] = (sel[id]||0)+1; }
+  else if(act === 'minus'){ sel[id] = (sel[id]||1)-1; if(sel[id]<=0) delete sel[id]; }
+  else { if(sel[id]) delete sel[id]; else sel[id]=1; }
+  buildGrid(); calc();
+});
+$('loadList').addEventListener('click', e => {
+  const b = e.target.closest('button');
+  if(!b) return;
+  const id = b.dataset.id, act = b.dataset.act;
+  if(act === 'plus') sel[id]++;
+  else if(act === 'minus'){ sel[id]--; if(sel[id]<=0) delete sel[id]; }
+  else delete sel[id];
+  buildGrid(); calc();
+});
+$('addMore').addEventListener('click', () => {
+  const id = $('moreSel').value;
+  if(!id) return;
+  sel[id] = (sel[id]||0)+1;
+  $('moreSel').value = '';
+  buildGrid(); calc();
+});
+['cap','usable','eff','idle','cont','surge','panelW','sunH','aCap','aCont','aSurge','bCap','bCont','bSurge'].forEach(id => {
+  $(id).addEventListener('input', () => { buildGrid(); calc(); });
+});
+$('resetBtn').addEventListener('click', () => {
+  Object.keys(sel).forEach(k => delete sel[k]);
+  sel.fridge=1; sel.tv=1; sel.laptop=1; sel.light=2;
+  $('cap').value=1000; $('usable').value=85; $('eff').value=88; $('idle').value=10;
+  $('cont').value=1500; $('surge').value=3000; $('panelW').value=200; $('sunH').value=4;
+  buildGrid(); calc();
+});
+$('copyBtn').addEventListener('click', () => {
+  const t = totals();
+  const txt = 'My power station check (tool.maliksubhan.top/power-station-calculator/): ' +
+    num('cap',1000).toLocaleString('en-US') + ' Wh station, ' + Math.round(t.avg) + ' W average load, ' +
+    'estimated runtime ' + $('bigTime').textContent + ', start-up peak ' + t.peak.toLocaleString('en-US') + ' W. ' +
+    Object.keys(sel).map(id => ALL[id].name + (sel[id]>1 ? ' x'+sel[id] : '')).join(', ') + '.';
+  const done = () => { $('copyNote').textContent = 'Copied — paste it anywhere.'; };
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done, () => { $('copyNote').textContent = txt; }); }
+  else { $('copyNote').textContent = txt; }
+});
+buildGrid();
+setCountry('us');
+calc();
+</script>
+</body>
+</html>
