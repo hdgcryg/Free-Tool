@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BD70WD6GVM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BD70WD6GVM');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solar Quote Checker USA — Is Your Quote Fair?</title>
+<meta name="description" content="Got a solar quote in the USA? Enter the price, panels, inverter and battery and check if it is fair — price per watt by state, the dead 30% tax credit trap, production check, and what is missing. Free, no sign-up.">
+<meta name="keywords" content="solar quote checker usa, check solar quote, solar panel cost per watt usa, is my solar quote fair, solar quote checker free, solar cost by state 2026, federal solar tax credit ended, solar quote comparison">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Solar Quote Checker USA — Is Your Quote Fair?">
+<meta property="og:description" content="Paste your US solar quote in and check it before you sign: price per watt vs your state's average, the 30% tax credit trap, production check, and the details your installer left out. Free, no sign-up.">
+<meta property="og:url" content="https://tool.maliksubhan.top/solar-quote-checker-usa/">
+<meta property="og:image" content="https://tool.maliksubhan.top/og-solar-usa.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Solar Quote Checker USA — Is Your Quote Fair?">
+<meta name="twitter:description" content="Check your US solar quote before you sign: price per watt by state, the dead 30% tax credit trap, production check, and what is missing. Free, no sign-up.">
+<meta name="twitter:image" content="https://tool.maliksubhan.top/og-solar-usa.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Solar Quote Checker USA","url":"https://tool.maliksubhan.top/solar-quote-checker-usa/","description":"Check a US home solar quotation: price per watt against your state's average, the 30% federal tax credit trap (ended Dec 31, 2025), production estimate check, battery price check, missing details and questions to ask the installer. Free, no sign-up.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, Helvetica, sans-serif; background: #f4f6f8; color: #1a1a1a; line-height: 1.6; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 24px 16px 48px; }
+  .crumbs { font-size: 13px; color: #888; margin-bottom: 8px; }
+  .crumbs a { color: #888; }
+  header { text-align: center; padding: 28px 0 4px; }
+  header h1 { font-size: 30px; line-height: 1.25; }
+  header h1 span { color: #d97706; }
+  header p { color: #555; margin-top: 8px; font-size: 16px; max-width: 660px; margin-left: auto; margin-right: auto; }
+  .card { background: #fff; border: 1px solid #e2e2e2; border-radius: 12px; padding: 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-top: 24px; }
+  .card h2 { font-size: 20px; margin-bottom: 6px; }
+  .card h2 span { color: #d97706; }
+  .card p { color: #555; font-size: 14px; }
+  .field { margin-top: 14px; }
+  .field label { display: block; font-size: 13px; font-weight: bold; color: #444; margin-bottom: 6px; }
+  .field input, .field select { padding: 11px 12px; font-size: 16px; border: 2px solid #ccc; border-radius: 8px; font-family: Arial, Helvetica, sans-serif; background: #fff; }
+  .field input:focus, .field select:focus { border-color: #d97706; outline: none; }
+  .field input[type=number] { width: 160px; }
+  .field select { max-width: 100%; }
+  .grid { display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-end; }
+  .hint { font-size: 13px; color: #888; margin-top: 4px; }
+  .seg { display: flex; gap: 8px; flex-wrap: wrap; }
+  .seg button { border: 2px solid #ccc; background: #fff; border-radius: 8px; padding: 10px 18px; font-size: 15px; cursor: pointer; font-family: Arial, Helvetica, sans-serif; }
+  .seg button.on { background: #d97706; color: #fff; border-color: #d97706; font-weight: bold; }
+  .checks { margin-top: 10px; }
+  .checks label { display: block; font-weight: normal; font-size: 15px; color: #333; padding: 6px 0; cursor: pointer; }
+  .checks input { margin-right: 8px; transform: scale(1.2); }
+  .btn { background: #d97706; color: #fff; border: none; border-radius: 8px; padding: 12px 22px; font-size: 15px; font-weight: bold; cursor: pointer; }
+  .btn:hover { background: #b45309; }
+  .btn-light { background: #eee; color: #1a1a1a; }
+  .btn-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+  .error { display: none; background: #fdecea; color: #b3261e; border: 1px solid #f5c6c2; border-radius: 8px; padding: 10px 12px; margin-top: 12px; font-size: 14px; }
+  .verdict { text-align: center; padding: 20px 10px 8px; }
+  .verdict .big { font-size: 34px; font-weight: bold; }
+  .verdict .big.good { color: #0a7d5c; }
+  .verdict .big.warn { color: #b7791f; }
+  .verdict .big.bad { color: #b3261e; }
+  .verdict .big.low { color: #6d28d9; }
+  .verdict p { color: #444; font-size: 15px; margin-top: 6px; }
+  .totals { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+  .totals .stat { flex: 1 1 140px; background: #f4f6f8; border-radius: 10px; padding: 14px 10px; text-align: center; }
+  .totals .num { font-size: 24px; font-weight: bold; }
+  .totals .num.green { color: #0a7d5c; }
+  .totals .num.red { color: #b3261e; }
+  .totals .num.amber { color: #b7791f; }
+  .totals .lbl { font-size: 13px; color: #666; margin-top: 2px; }
+  .findings { margin-top: 16px; }
+  .finding { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px solid #eee; align-items: baseline; }
+  .finding:last-child { border-bottom: none; }
+  .finding .dot { font-size: 18px; line-height: 1; min-width: 22px; text-align: center; }
+  .finding .dot.ok { color: #0a7d5c; }
+  .finding .dot.warn { color: #b7791f; }
+  .finding .dot.bad { color: #b3261e; }
+  .finding .t { font-weight: bold; }
+  .finding .d { color: #555; font-size: 14px; }
+  .qlist { margin-top: 12px; }
+  .qlist li { margin-left: 18px; color: #444; margin-bottom: 6px; }
+  .note { margin-top: 12px; font-size: 13px; color: #777; }
+  section.info h2 { font-size: 20px; margin-bottom: 8px; }
+  section.info ol, section.info ul { margin-left: 20px; color: #444; }
+  section.info li { margin-bottom: 6px; }
+  .faq h3 { font-size: 16px; margin-top: 14px; }
+  .faq p { color: #444; }
+  .src { font-size: 13px; color: #777; }
+  .src a { color: #777; }
+  table.bench { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; }
+  table.bench th, table.bench td { border: 1px solid #e2e2e2; padding: 8px 10px; text-align: left; }
+  table.bench th { background: #f4f6f8; }
+  footer { text-align: center; color: #888; font-size: 13px; margin-top: 40px; }
+  footer a { color: #888; }
+  .tags { text-align: center; color: #888; font-size: 13px; margin-top: 12px; }
+  #results { display: none; }
+  #batterySection { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="crumbs"><a href="/">← All free tools</a></p>
+  <header>
+    <h1>☀️ <span>Solar Quote Checker</span> — USA</h1>
+    <p><b>Got a solar quote and not sure if the price is fair?</b> Enter what your installer quoted — price, panels, inverter, battery — and this tool checks it against real US market rates from November 2026, including the tax credit trap that catches most 2026 quotes.</p>
+  </header>
+
+  <div class="card">
+    <h2>Your <span>state</span></h2>
+    <p>Solar prices change a lot by state — labor, permits and competition are different everywhere. Pick your state and the tool uses its average price per watt.</p>
+    <div class="field">
+      <label for="state">State where the system will be installed</label>
+      <select id="state">
+        <option value="2.60">US average — $2.60/W</option>
+        <option value="2.52" selected>California — $2.52/W</option>
+        <option value="2.12">Florida — $2.12/W</option>
+        <option value="2.25">Arizona — $2.25/W</option>
+        <option value="2.26">Texas — $2.26/W</option>
+        <option value="2.28">Mississippi — $2.28/W</option>
+        <option value="2.31">Louisiana — $2.31/W</option>
+        <option value="2.44">North Carolina — $2.44/W</option>
+        <option value="2.50">Georgia — $2.50/W</option>
+        <option value="2.58">New Jersey — $2.58/W</option>
+        <option value="2.59">Pennsylvania — $2.59/W</option>
+        <option value="2.65">Colorado — $2.65/W</option>
+        <option value="2.67">Connecticut — $2.67/W</option>
+        <option value="2.77">New York — $2.77/W</option>
+        <option value="2.90">Massachusetts — $2.90/W</option>
+        <option value="2.92">Illinois — $2.92/W</option>
+        <option value="3.03">Wisconsin — $3.03/W</option>
+        <option value="3.12">Washington, D.C. — $3.12/W</option>
+        <option value="3.23">Minnesota — $3.23/W</option>
+        <option value="3.26">Iowa — $3.26/W</option>
+        <option value="3.43">Hawaii — $3.43/W</option>
+        <option value="3.48">Tennessee — $3.48/W</option>
+        <option value="3.71">Alabama — $3.71/W</option>
+      </select>
+      <div class="hint">Averages are EnergySage marketplace quotes, before incentives, November 2026. Your state not listed? Pick "US average".</div>
+    </div>
+    <div class="field" style="margin-top:16px;">
+      <label>How are you paying?</label>
+      <div class="seg">
+        <button type="button" id="payCash" class="on">Cash</button>
+        <button type="button" id="payLoan">Solar loan</button>
+        <button type="button" id="payLease">Lease / PPA</button>
+      </div>
+      <div class="hint">Loans usually cost about $0.60/W more than cash (dealer fees rolled into the loan). A lease or PPA is not a purchase — the company owns the system.</div>
+    </div>
+    <div class="error" id="error"></div>
+  </div>
+
+  <div class="card">
+    <h2>The <span>quotation</span></h2>
+    <div class="grid">
+      <div class="field">
+        <label for="totalPrice">Total quoted price ($)</label>
+        <input type="number" id="totalPrice" value="21000" min="1" step="100">
+        <div class="hint">The full price on the quotation, BEFORE any tax credit or incentive. If the quote shows a price after a 30% credit, tick the box below.</div>
+      </div>
+      <div class="field">
+        <label for="panelCount">Number of panels</label>
+        <input type="number" id="panelCount" value="20" min="1" max="200">
+      </div>
+      <div class="field">
+        <label for="panelWatts">Panel size (watts each)</label>
+        <input type="number" id="panelWatts" value="400" min="50" max="1000">
+        <div class="hint">Usually 400–450W for US homes in 2026.</div>
+      </div>
+      <div class="field">
+        <label for="panelBrand">Panel brand</label>
+        <select id="panelBrand">
+          <option value="tier1">Qcells / REC / Panasonic / Silfab / Jinko / Longi / Canadian Solar / Trina</option>
+          <option value="other">Another brand</option>
+          <option value="unknown">Not written on the quotation</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="panelPrice">Price of panels only ($) — optional</label>
+        <input type="number" id="panelPrice" placeholder="e.g. 8000" min="1" step="100">
+        <div class="hint">Only if your quotation breaks the panels out separately.</div>
+      </div>
+    </div>
+    <div class="checks" style="margin-top:16px;">
+      <label><input type="checkbox" id="ckTaxCredit"> <b>The quote's final price already subtracts a 30% federal tax credit</b> — tick this if the quote shows a credit or a "price after incentives" line.</label>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>The <span>inverter</span></h2>
+    <div class="grid">
+      <div class="field">
+        <label for="invKw">Inverter size (kW)</label>
+        <input type="number" id="invKw" value="7.6" min="1" max="100" step="0.1">
+      </div>
+      <div class="field">
+        <label for="invType">Inverter type</label>
+        <select id="invType">
+          <option value="micro">Microinverters (Enphase)</option>
+          <option value="opt">String inverter + optimizers (SolarEdge / Tigo)</option>
+          <option value="string">String inverter only</option>
+          <option value="unknown">Not written on the quotation</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="invBrand">Inverter brand</label>
+        <select id="invBrand">
+          <option value="known">Enphase / SolarEdge / Tesla / Fronius / SMA</option>
+          <option value="other">Another brand</option>
+          <option value="unknown">Not written on the quotation</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>The <span>battery</span></h2>
+    <p>Does the quote include a home battery? A battery adds roughly $1,000–$1,300 per kWh installed in 2026.</p>
+    <div class="seg" style="margin-top:12px;">
+      <button type="button" id="battNo" class="on">No battery</button>
+      <button type="button" id="battYes">Yes, includes a battery</button>
+    </div>
+    <div id="batterySection">
+      <div class="grid">
+        <div class="field">
+          <label for="battType">Battery</label>
+          <select id="battType">
+            <option value="powerwall">Tesla Powerwall 3 (13.5 kWh)</option>
+            <option value="enphase">Enphase IQ Battery (5 or 10 kWh)</option>
+            <option value="franklin">FranklinWH aPower 2 (15 kWh)</option>
+            <option value="other">Another lithium battery</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="battKwh">Battery size (kWh)</label>
+          <input type="number" id="battKwh" value="13.5" min="0" max="100" step="0.5">
+        </div>
+        <div class="field">
+          <label for="battPrice">Price of battery only ($) — optional</label>
+          <input type="number" id="battPrice" placeholder="e.g. 15000" min="1" step="100">
+          <div class="hint">Only if your quotation breaks the battery out separately.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Production <span>estimate</span></h2>
+    <p>Most quotes promise a yearly production number. A US home system makes about 1,100–1,600 kWh per kW each year — the tool checks if your quote's number is honest.</p>
+    <div class="grid">
+      <div class="field">
+        <label for="prodKwh">Quoted yearly production (kWh/year) — optional</label>
+        <input type="number" id="prodKwh" value="11000" min="1" step="100">
+        <div class="hint">From the quotation, e.g. "estimated first-year production". Leave it if your quote does not give one.</div>
+      </div>
+      <div class="field">
+        <label for="elecRate">Your electricity rate (cents/kWh)</label>
+        <input type="number" id="elecRate" value="30" min="1" max="100" step="1">
+        <div class="hint">From your utility bill. US average is about 17¢; California is about 30¢, Hawaii about 48¢.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>What does the quotation <span>actually say?</span></h2>
+    <p>Tick what is written on your quotation. Anything unticked is a gap — the tool lists it below so you can ask for it in writing before you sign.</p>
+    <div class="checks" id="checks">
+      <label><input type="checkbox" id="ckPanelWarranty" checked> Panel model + 25-year warranty written</label>
+      <label><input type="checkbox" id="ckInvWarranty" checked> Inverter warranty written (25 years for microinverters, 10–12 for string inverters)</label>
+      <label><input type="checkbox" id="ckBattWarranty"> Battery warranty written (usually 10 years)</label>
+      <label><input type="checkbox" id="ckRoof" checked> Roof age and condition noted (a roof older than 15 years usually needs replacing first)</label>
+      <label><input type="checkbox" id="ckPermits"> Permits and utility interconnection included in the price</label>
+      <label><input type="checkbox" id="ckProduction"> Yearly production estimate written on the quote</label>
+      <label><input type="checkbox" id="ckLoanTerms"> Loan APR and dealer fee disclosed (if you are financing)</label>
+      <label><input type="checkbox" id="ckWorkmanship"> Workmanship warranty years written (usually 10–25 years)</label>
+      <label><input type="checkbox" id="ckExport"> Net metering / export rules for your utility explained</label>
+    </div>
+  </div>
+
+  <div class="btn-row" style="justify-content:center;">
+    <button class="btn" id="calcBtn" style="padding:14px 40px; font-size:18px;">Check my quote ☀️</button>
+  </div>
+
+  <div class="card" id="results">
+    <h2>Your <span>verdict</span></h2>
+    <div class="verdict"><div class="big" id="verdictBig"></div><p id="verdictText"></p></div>
+    <div class="totals">
+      <div class="stat"><div class="num" id="totDc">–</div><div class="lbl">system size (DC)</div></div>
+      <div class="stat"><div class="num" id="totPerW">–</div><div class="lbl">$ per watt (whole system)</div></div>
+      <div class="stat"><div class="num" id="totRange">–</div><div class="lbl">fair range for your state</div></div>
+      <div class="stat"><div class="num" id="totRatio">–</div><div class="lbl">panel-to-inverter ratio</div></div>
+      <div class="stat" id="paybackStat" style="display:none;"><div class="num" id="totPayback">–</div><div class="lbl">simple payback (years)</div></div>
+    </div>
+    <div class="findings" id="findings"></div>
+    <h2 style="margin-top:24px;">Questions to ask <span>your installer</span></h2>
+    <ul class="qlist" id="qlist"></ul>
+    <p class="note" id="resultNote"></p>
+    <div class="btn-row">
+      <button class="btn btn-light" id="copyBtn">Copy my quote check</button>
+    </div>
+  </div>
+
+  <section class="info card">
+    <h2>How the check works</h2>
+    <ol>
+      <li><b>Price per watt:</b> your total price divided by your total panel watts. In November 2026 the US average was <b>$2.60/W</b> (EnergySage marketplace quotes, before incentives) — from $2.12/W in Florida to $3.71/W in Alabama. A competitive cash price is about <b>$2.50–$3.50/W</b> in most of the country. The tool compares your quote with your state's average, allowing about 15% below and 20% above it.</li>
+      <li><b>Loans cost more:</b> a solar loan usually adds about <b>$0.60/W</b> to the price — the lender's dealer fee is rolled into the loan balance. So a loan quote is judged against a range $0.60/W higher than a cash quote. Always ask for the cash price too, and the loan APR.</li>
+      <li><b>The 30% tax credit is DEAD for homeowners.</b> The federal Residential Clean Energy Credit (Section 25D) ended for systems installed after <b>December 31, 2025</b> (One Big Beautiful Bill Act, Public Law 119-21). If a 2026 quote subtracts a 30% credit from your price, the real cost is thousands more than shown — the tool adds it back and judges the real price. Leases and PPAs are different: the company that owns the system can still claim a credit through December 31, 2027.</li>
+      <li><b>Battery adder:</b> a home battery installed with solar costs about <b>$1,000–$1,300 per kWh</b> in 2026 — a Tesla Powerwall 3 (13.5 kWh) typically runs $13,500–$16,500 installed. That is added to the fair range above.</li>
+      <li><b>Production check:</b> a US home system makes about <b>1,100–1,600 kWh per kW per year</b> (more in the sunny Southwest, less in the cloudy North). If your quote promises far more than that, the production number is inflated — the #1 trick in solar proposals.</li>
+      <li><b>Panel-to-inverter ratio:</b> total panel kW divided by inverter kW. <b>1.0–1.3</b> is normal — a little more panel than inverter is good. Above 1.4 the inverter clips power on sunny days; below 0.9 you paid for inverter capacity you will not use.</li>
+    </ol>
+    <h2 style="margin-top:20px;">Today's market benchmarks — USA, November 2026</h2>
+    <table class="bench">
+      <tr><th>Item</th><th>Fair range</th></tr>
+      <tr><td>US average installed (EnergySage)</td><td>$2.60 / watt</td></tr>
+      <tr><td>Competitive cash price, most states</td><td>$2.50 – $3.50 / watt</td></tr>
+      <tr><td>8 kW system (EnergySage average)</td><td>~$20,960</td></tr>
+      <tr><td>12 kW system (EnergySage average)</td><td>~$31,135</td></tr>
+      <tr><td>Berkeley Lab median, 2025 installs</td><td>$3.60 / watt (cash $3.50, loan $4.70)</td></tr>
+      <tr><td>Wood Mackenzie / SEIA turnkey, Q2 2026</td><td>$3.36 / watt</td></tr>
+      <tr><td>Tesla Powerwall 3, installed (13.5 kWh)</td><td>$13,500 – $16,500</td></tr>
+      <tr><td>Average home battery (EnergySage, H1 2026)</td><td>$15,650</td></tr>
+      <tr><td>Yearly production per kW</td><td>1,100 – 1,600 kWh</td></tr>
+      <tr><td>Federal tax credit (homeowner-owned)</td><td>30% — ENDED Dec 31, 2025</td></tr>
+    </table>
+    <p class="note">Prices move with labor, permits and equipment costs, and they differ by state, roof and installer. These benchmarks were checked on 28 November 2026 — always confirm the current rate on the day you sign. A price alone never proves a quote is a scam: a high price can mean better brands and warranties, and a low price can mean lower-grade panels or missing items.</p>
+    <p class="src" style="margin-top:10px;">Sources: EnergySage marketplace data, Nov 2026 (state $/W averages, national $2.60/W) · <a href="https://www.solarreviews.com/solar-panel-cost" target="_blank" rel="noopener">solarreviews.com — solar panel costs, Nov 2026</a> · <a href="https://solutionenergy.com/solar/cost/" target="_blank" rel="noopener">solutionenergy.com — solar cost guide, 2026</a> · <a href="https://homeenergyplanner.com/solar-tax-credit-2026/" target="_blank" rel="noopener">homeenergyplanner.com — solar tax credit 2026 (IRS sources)</a> · <a href="https://www.irs.gov/newsroom/one-big-beautiful-bill-provisions" target="_blank" rel="noopener">irs.gov — One Big Beautiful Bill provisions</a> · <a href="https://www.solar.com/learn/tesla-powerwall/" target="_blank" rel="noopener">solar.com — Tesla Powerwall 3 prices, Nov 2026</a>.</p>
+    <div class="faq">
+      <h2>Questions</h2>
+      <h3>My quote is much cheaper than the fair range. Is that good?</h3>
+      <p>Not always. A very cheap quote often means lower-grade panels, a no-name inverter, a thin roof mount, or items left out (permits, interconnection, wiring). Ask the installer to put the panel brand, model and warranty in writing, and compare two more quotes before you decide.</p>
+      <h3>Cash or loan — which is better?</h3>
+      <p>Cash is almost always cheaper: loans add about $0.60/W in dealer fees, and the total you repay over 20–25 years can be far more than the system price. If you must finance, ask for the cash price and the loan price side by side, the APR, and the dealer fee as a dollar amount — not just the monthly payment.</p>
+      <h3>What about the 30% federal tax credit?</h3>
+      <p>For homeowners who buy (cash or loan), it ended December 31, 2025. A 2026 quote that still shows it is either out of date or misleading you — the real price is about 43% higher than the "after credit" number shown. Only leases and PPAs still get a federal credit, because the company owns the system and claims it through 2027.</p>
+      <h3>Lease or PPA — should I take one?</h3>
+      <p>You pay nothing up front, but you do not own the panels, you do not get the tax credit, and the monthly rate usually rises every year (an escalator, often 2–3%). Compare the lease rate with your current utility rate, ask what happens if you sell the house, and get a cash purchase quote for the same system so you can compare honestly.</p>
+      <h3>What should be in writing before I sign anything?</h3>
+      <p>Panel brand, model, wattage and warranty; inverter brand, model and warranty; battery brand, capacity and warranty; roof condition; what installation includes (permits, interconnection, wiring); the yearly production estimate; and, if financing, the APR and dealer fee. If it is not written down, it is not promised.</p>
+      <h3>Does this tool store my quotation?</h3>
+      <p>No. Everything happens in your browser. Nothing is uploaded or stored.</p>
+    </div>
+  </section>
+
+  <footer>Free tool by Malik Subhan · <a href="/">maliksubhan.top</a></footer>
+  <p class="tags">#SolarUSA #SolarQuoteChecker #SolarPanelCost #SolarQuotes #GoSolarUSA</p>
+</div>
+
+<script>
+var payType = 'cash';
+var hasBattery = false;
+
+function $(id) { return document.getElementById(id); }
+function num(id) { var v = parseFloat($(id).value); return isNaN(v) ? 0 : v; }
+function fmt(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+
+function setPay(t) {
+  payType = t;
+  $('payCash').classList.toggle('on', t === 'cash');
+  $('payLoan').classList.toggle('on', t === 'loan');
+  $('payLease').classList.toggle('on', t === 'lease');
+}
+$('payCash').addEventListener('click', function () { setPay('cash'); });
+$('payLoan').addEventListener('click', function () { setPay('loan'); });
+$('payLease').addEventListener('click', function () { setPay('lease'); });
+
+function setBatt(b) {
+  hasBattery = b;
+  $('battNo').classList.toggle('on', !b);
+  $('battYes').classList.toggle('on', b);
+  $('batterySection').style.display = b ? 'block' : 'none';
+}
+$('battNo').addEventListener('click', function () { setBatt(false); });
+$('battYes').addEventListener('click', function () { setBatt(true); });
+
+function showError(msg) {
+  var e = $('error');
+  e.textContent = msg;
+  e.style.display = 'block';
+  setTimeout(function () { e.style.display = 'none'; }, 5000);
+}
+
+var lastResult = null;
+
+function addFinding(list, cls, title, detail) {
+  var div = document.createElement('div');
+  div.className = 'finding';
+  var icon = cls === 'ok' ? '✓' : cls === 'warn' ? '!' : '✕';
+  div.innerHTML = '<div class="dot ' + cls + '">' + icon + '</div><div><div class="t">' + title + '</div><div class="d">' + detail + '</div></div>';
+  list.appendChild(div);
+}
+
+function calc() {
+  var total = num('totalPrice');
+  var panels = num('panelCount');
+  var watts = num('panelWatts');
+  var invKw = num('invKw');
+  var panelPrice = num('panelPrice');
+  var battKwh = hasBattery ? num('battKwh') : 0;
+  var battPrice = num('battPrice');
+  var prodKwh = num('prodKwh');
+  var elecRate = num('elecRate');
+  var stateAvg = parseFloat($('state').value);
+  var stateName = $('state').options[$('state').selectedIndex].text.split(' — ')[0];
+  var creditTrap = $('ckTaxCredit').checked;
+
+  if (!panels || !watts || !invKw) { showError('Fill in the number of panels, panel size and inverter size first.'); return; }
+  if (payType !== 'lease' && !total) { showError('Fill in the total quoted price first.'); return; }
+
+  var dcW = panels * watts;
+  var dcKw = dcW / 1000;
+  var ratio = dcKw / invKw;
+
+  // Real price: if the quote already subtracted a dead 30% credit, the price entered is a net price — add it back.
+  var realTotal = total;
+  if (creditTrap && payType !== 'lease' && total > 0) realTotal = total / 0.7;
+  var perW = total > 0 ? realTotal / dcW : 0;
+
+  // Fair band from the state average (EnergySage, Nov 2026). Loans run ~$0.60/W higher (dealer fees).
+  var loanAdd = payType === 'loan' ? 0.60 : 0;
+  var battLow = 0, battHigh = 0;
+  if (battKwh > 0) {
+    battLow = battKwh * 1000 / dcW;
+    battHigh = battKwh * 1300 / dcW;
+  }
+  var expLow = stateAvg * 0.85 + loanAdd + battLow;
+  var expHigh = stateAvg * 1.20 + loanAdd + battHigh;
+
+  var verdict, cls, text;
+  if (payType === 'lease') {
+    verdict = 'LEASE / PPA — NOT A PURCHASE'; cls = 'warn';
+    text = 'A lease or PPA is not a purchase: the company owns the panels on your roof, you pay a monthly rate, and the company keeps the federal tax credit. There is no fair $/W price to check — compare the monthly rate with your utility bill, check the yearly escalator, and ask what happens if you sell the house.';
+  } else if (perW < expLow * 0.9) {
+    verdict = 'SUSPICIOUSLY CHEAP'; cls = 'low';
+    text = 'This quote is well below the usual range for ' + stateName + ' ($' + expLow.toFixed(2) + '–$' + expHigh.toFixed(2) + ' per watt, checked Nov 2026). That can mean lower-grade panels, a no-name inverter, or items left out of the price. Do not sign until the brands, warranties and included items are in writing — and get two more quotes to compare.';
+  } else if (perW <= expHigh) {
+    verdict = 'FAIR PRICE'; cls = 'good';
+    text = 'Your price sits inside the usual range for ' + stateName + ' ($' + expLow.toFixed(2) + '–$' + expHigh.toFixed(2) + ' per watt, checked Nov 2026' + (payType === 'loan' ? ', loan pricing' : '') + '). Check the findings below before you sign.';
+  } else if (perW <= expHigh * 1.2) {
+    verdict = 'A BIT HIGH'; cls = 'warn';
+    text = 'Your quote is above the usual range for ' + stateName + ' ($' + expLow.toFixed(2) + '–$' + expHigh.toFixed(2) + ' per watt). It may be justified by premium panels or a longer warranty — ask the installer what exactly costs extra, and get a second quote.';
+  } else {
+    verdict = 'HIGH — GET ANOTHER QUOTE'; cls = 'bad';
+    text = 'Your quote is well above the usual range for ' + stateName + ' ($' + expLow.toFixed(2) + '–$' + expHigh.toFixed(2) + ' per watt). Do not sign this one — get at least two more quotes for the same system size and compare them line by line.';
+  }
+
+  var findings = [];
+
+  // The 30% tax credit trap — the #1 problem in 2026 US quotes.
+  if (creditTrap && payType !== 'lease') {
+    findings.push({ c: 'bad', t: 'RED FLAG — your quote subtracts a 30% federal tax credit that no longer exists', d: 'The homeowner credit (Section 25D) ended for systems installed after December 31, 2025. The price you entered (' + fmt(total) + ') is a net price — the real gross price is ' + fmt(realTotal) + ' (' + fmt(perW) + ' per watt). Ask the installer for a quote with no credit subtracted, and get another quote to compare.' });
+  }
+
+  // Panel price check (hardware only, ConsumerAffairs: DIY panels $0.80–$1.40/W)
+  if (panelPrice > 0) {
+    var ppw = panelPrice / dcW;
+    if ($('panelBrand').value === 'tier1') {
+      if (ppw >= 0.8 && ppw <= 1.4) findings.push({ c: 'ok', t: 'Panels fairly priced — ' + fmt(ppw) + ' / watt (hardware)', d: 'Panel hardware alone usually runs $0.80–$1.40 per watt. Yours sits inside that range.' });
+      else if (ppw < 0.8) findings.push({ c: 'warn', t: 'Panels cheaper than usual — ' + fmt(ppw) + ' / watt (hardware)', d: 'Panel hardware is usually $0.80–$1.40/W. Cheaper panels may be older stock or a lesser brand — ask for the model and warranty in writing.' });
+      else findings.push({ c: 'warn', t: 'Panels priced above hardware range — ' + fmt(ppw) + ' / watt', d: 'Panel hardware is usually $0.80–$1.40/W. Premium models can cost more — ask what makes these panels worth it.' });
+    } else {
+      findings.push({ c: 'warn', t: 'Panels: ' + fmt(ppw) + ' / watt (hardware)', d: 'Panel hardware is usually $0.80–$1.40/W. Lesser-known brands sell cheaper — make sure the brand, model and warranty are written on the quotation.' });
+    }
+  } else if ($('panelBrand').value === 'unknown') {
+    findings.push({ c: 'warn', t: 'Panel brand not on the quotation', d: 'Without a brand and model you cannot check the price or the warranty. Ask for it in writing before signing.' });
+  }
+
+  // Inverter brand
+  if ($('invBrand').value === 'unknown') {
+    findings.push({ c: 'warn', t: 'Inverter brand not on the quotation', d: 'The inverter is the part most likely to fail. Ask for the brand, model and warranty in writing.' });
+  }
+  if ($('invType').value === 'unknown') {
+    findings.push({ c: 'warn', t: 'Inverter type not on the quotation', d: 'Microinverters (25-year warranty) and string inverters (10–12 years) are very different deals. Ask which one you are getting.' });
+  }
+
+  // Panel-to-inverter ratio
+  if (ratio >= 1.0 && ratio <= 1.3) findings.push({ c: 'ok', t: 'Panel-to-inverter ratio is good — ' + ratio.toFixed(2), d: 'Your ' + dcKw.toFixed(2) + ' kW of panels on a ' + invKw + ' kW inverter is in the normal 1.0–1.3 range.' });
+  else if (ratio > 1.3) findings.push({ c: 'warn', t: 'Too many panels for this inverter — ratio ' + ratio.toFixed(2), d: 'Above 1.3 the inverter clips power on sunny days, so some of your panels\' output is wasted. Ask for a bigger inverter or fewer panels.' });
+  else findings.push({ c: 'warn', t: 'Inverter bigger than the panels need — ratio ' + ratio.toFixed(2), d: 'Below 1.0 you paid for inverter capacity your panels cannot fill. A smaller inverter would have cost less.' });
+
+  // Battery
+  var usable = 0;
+  if (hasBattery) {
+    if (battKwh <= 0) {
+      findings.push({ c: 'warn', t: 'Battery included but no size given', d: 'Ask for the battery size in kWh and the usable capacity — a 13.5 kWh Powerwall 3 is the most common home battery in the US.' });
+    } else {
+      usable = battKwh * 0.9;
+      findings.push({ c: 'ok', t: 'Battery usable capacity: about ' + usable.toFixed(1) + ' kWh from a ' + battKwh + ' kWh bank', d: 'Lithium home batteries give about 90% usable. A 13.5 kWh Powerwall runs essential loads (fridge, lights, Wi-Fi, ~800W) for roughly 15 hours.' });
+      if (battPrice > 0) {
+        var perKwh = battPrice / battKwh;
+        if (perKwh >= 1000 && perKwh <= 1300) findings.push({ c: 'ok', t: 'Battery fairly priced — ' + fmt(perKwh) + ' per kWh installed', d: 'Home batteries installed with solar cost about $1,000–$1,300 per kWh in 2026 (Powerwall 3: $13,500–$16,500 for 13.5 kWh).' });
+        else if (perKwh < 1000) findings.push({ c: 'warn', t: 'Battery cheap per kWh — ' + fmt(perKwh), d: 'Below $1,000 per kWh installed is unusually cheap. Check the brand, warranty and what installation includes.' });
+        else findings.push({ c: 'warn', t: 'Battery expensive per kWh — ' + fmt(perKwh), d: 'Above $1,300 per kWh installed is high. Ask what is included — premium brand, longer warranty or extra electrical work can justify it.' });
+      }
+    }
+  }
+
+  // Production check
+  var prodLow = dcKw * 1100, prodHigh = dcKw * 1600;
+  if (prodKwh > 0) {
+    if (prodKwh > prodHigh) findings.push({ c: 'bad', t: 'Production estimate looks inflated — ' + prodKwh.toLocaleString('en-US') + ' kWh/year promised', d: 'A ' + dcKw.toFixed(2) + ' kW system in the US makes about ' + Math.round(prodLow).toLocaleString('en-US') + '–' + Math.round(prodHigh).toLocaleString('en-US') + ' kWh a year. Your quote promises far more — this is the most common trick in solar proposals. Ask for the production estimate in writing, with the assumptions (shade, tilt, direction).' });
+    else if (prodKwh < prodLow) findings.push({ c: 'warn', t: 'Production estimate lower than expected — ' + prodKwh.toLocaleString('en-US') + ' kWh/year', d: 'A ' + dcKw.toFixed(2) + ' kW system usually makes ' + Math.round(prodLow).toLocaleString('en-US') + '–' + Math.round(prodHigh).toLocaleString('en-US') + ' kWh a year. A lower number can mean heavy shade, a bad roof direction, or an undersized system — ask why.' });
+    else findings.push({ c: 'ok', t: 'Production estimate looks honest — ' + prodKwh.toLocaleString('en-US') + ' kWh/year', d: 'That is inside the normal ' + Math.round(prodLow).toLocaleString('en-US') + '–' + Math.round(prodHigh).toLocaleString('en-US') + ' kWh a year for a ' + dcKw.toFixed(2) + ' kW system.' });
+  }
+
+  // Loan warning
+  if (payType === 'loan') {
+    findings.push({ c: 'warn', t: 'Loan quotes hide about $0.60/W in dealer fees', d: 'The lender adds a fee to your loan balance — a $21,000 cash system can become ~$25,000+ on a loan. Ask for the cash price, the APR, and the dealer fee as a dollar amount, not just the monthly payment.' });
+  }
+  if (payType === 'lease') {
+    findings.push({ c: 'warn', t: 'With a lease or PPA you do not own the panels', d: 'The company keeps the federal tax credit (still available to them through Dec 31, 2027), your monthly rate usually rises 2–3% a year, and selling the house gets complicated. Get a cash purchase quote for the same system and compare the 25-year cost.' });
+  }
+
+  // Missing details
+  var missing = [];
+  if (!$('ckPanelWarranty').checked) missing.push('panel model + 25-year warranty');
+  if (!$('ckInvWarranty').checked) missing.push('inverter warranty');
+  if (!$('ckBattWarranty').checked && hasBattery) missing.push('battery warranty');
+  if (!$('ckRoof').checked) missing.push('roof age and condition');
+  if (!$('ckPermits').checked) missing.push('permits + utility interconnection');
+  if (!$('ckProduction').checked) missing.push('yearly production estimate in writing');
+  if (!$('ckLoanTerms').checked && payType === 'loan') missing.push('loan APR + dealer fee');
+  if (!$('ckWorkmanship').checked) missing.push('workmanship warranty years');
+  if (!$('ckExport').checked) missing.push('net metering / export rules');
+  if (missing.length > 0) findings.push({ c: 'warn', t: 'Missing from your quotation: ' + missing.length + ' item' + (missing.length > 1 ? 's' : ''), d: missing.join('; ') + '. Get these in writing before you sign — if it is not written down, it is not promised.' });
+  else findings.push({ c: 'ok', t: 'Your quotation covers all the key details', d: 'Warranties, roof, permits, production, workmanship and export rules are all written down. That is a good sign.' });
+
+  // Payback (simple, before incentives — the honest 2026 math, since the credit is gone)
+  var annualKwh = prodKwh > 0 ? prodKwh : dcKw * 1350;
+  var annualValue = annualKwh * (elecRate > 0 ? elecRate : 17) / 100;
+  var payback = (payType !== 'lease' && annualValue > 0) ? realTotal / annualValue : 0;
+
+  // Questions for the installer
+  var qs = [];
+  qs.push('Which exact panel model is this, and what is the 25-year warranty?');
+  if (creditTrap && payType !== 'lease') qs.push('Why does this quote subtract a 30% federal tax credit when that credit ended December 31, 2025? What is the price with no credit at all?');
+  if (payType !== 'lease' && (perW < expLow * 0.9 || perW > expHigh)) qs.push('Why is this price ' + (perW < expLow ? 'below' : 'above') + ' the usual range of $' + expLow.toFixed(2) + '–$' + expHigh.toFixed(2) + ' per watt for ' + stateName + '?');
+  if (payType === 'loan') qs.push('What is the cash price for the same system, the loan APR, and the dealer fee in dollars?');
+  if (payType === 'lease') qs.push('What is the monthly rate, the yearly escalator, and what happens to the lease if I sell the house?');
+  if (ratio > 1.3) qs.push('Will the ' + invKw + ' kW inverter clip power from my ' + dcKw.toFixed(2) + ' kW of panels? Should the inverter be bigger?');
+  if (ratio < 1.0) qs.push('Why is the inverter ' + invKw + ' kW when my panels are only ' + dcKw.toFixed(2) + ' kW?');
+  if (prodKwh > prodHigh) qs.push('How did you calculate ' + prodKwh.toLocaleString('en-US') + ' kWh a year? Can I see the shade and production report?');
+  if (hasBattery && battKwh > 0) qs.push('How many backup hours will the ' + usable.toFixed(1) + ' kWh usable battery give my essential loads?');
+  if (missing.length > 0) qs.push('Can you add the missing items (' + missing.join(', ') + ') to the quotation in writing?');
+  qs.push('Are permits and utility interconnection included, and who files them?');
+  qs.push('What is the workmanship warranty, and who do I call if something stops working?');
+
+  lastResult = { payType: payType, stateName: stateName, total: realTotal, dcKw: dcKw, perW: perW, expLow: expLow, expHigh: expHigh, ratio: ratio, verdict: verdict, payback: payback, annualKwh: annualKwh, usable: usable, findings: findings, qs: qs };
+
+  var vb = $('verdictBig');
+  vb.textContent = verdict;
+  vb.className = 'big ' + cls;
+  $('verdictText').textContent = text;
+  $('totDc').textContent = dcKw.toFixed(2) + ' kW';
+  if (payType === 'lease') {
+    $('totPerW').textContent = '—';
+    $('totRange').textContent = '—';
+  } else {
+    $('totPerW').textContent = fmt(perW) + ' / W';
+    $('totRange').textContent = '$' + expLow.toFixed(2) + ' – $' + expHigh.toFixed(2) + ' / W';
+  }
+  $('totRatio').textContent = ratio.toFixed(2);
+  if (payback > 0) {
+    $('paybackStat').style.display = 'block';
+    $('totPayback').textContent = payback.toFixed(1) + ' yrs';
+  } else { $('paybackStat').style.display = 'none'; }
+
+  var fl = $('findings');
+  fl.innerHTML = '';
+  findings.forEach(function (f) { addFinding(fl, f.c, f.t, f.d); });
+
+  var ql = $('qlist');
+  ql.innerHTML = '';
+  qs.forEach(function (q) {
+    var li = document.createElement('li');
+    li.textContent = q;
+    ql.appendChild(li);
+  });
+
+  $('resultNote').textContent = 'Benchmarks checked 28 November 2026 (EnergySage marketplace data, SolarReviews, SolutionEnergy, IRS, solar.com). Prices differ by state, roof and installer — confirm the current rate on the day you sign. A price alone never proves a quote is a scam; always compare two or three quotes for the same system. This is general information, not tax or financial advice.';
+  $('results').style.display = 'block';
+  $('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+$('calcBtn').addEventListener('click', calc);
+$('copyBtn').addEventListener('click', function () {
+  if (!lastResult) return;
+  var r = lastResult;
+  var lines = ['My solar quote check — Solar Quote Checker USA'];
+  lines.push('State: ' + r.stateName + ' | System: ' + r.dcKw.toFixed(2) + ' kW (' + r.payType + ')');
+  if (r.payType !== 'lease') {
+    lines.push('Quoted price: ' + fmt(r.total) + ' (' + fmt(r.perW) + ' per watt)');
+    lines.push('Fair range: $' + r.expLow.toFixed(2) + ' – $' + r.expHigh.toFixed(2) + ' per watt');
+  }
+  lines.push('Verdict: ' + r.verdict);
+  lines.push('Panel-to-inverter ratio: ' + r.ratio.toFixed(2));
+  if (r.payback > 0) lines.push('Simple payback: ~' + r.payback.toFixed(1) + ' years (at ' + r.annualKwh.toLocaleString('en-US') + ' kWh/year)');
+  if (r.usable > 0) lines.push('Battery usable: ' + r.usable.toFixed(1) + ' kWh');
+  lines.push('Findings:');
+  r.findings.forEach(function (f) { lines.push('- ' + f.t + ' — ' + f.d); });
+  lines.push('Made with: https://tool.maliksubhan.top/solar-quote-checker-usa/');
+  var text = lines.join('\n');
+  var btn = $('copyBtn');
+  function done() { btn.textContent = 'Copied!'; setTimeout(function () { btn.textContent = 'Copy my quote check'; }, 1500); }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done).catch(function () { window.prompt('Copy your quote check:', text); });
+  } else { window.prompt('Copy your quote check:', text); }
+});
+</script>
+</body>
+</html>
